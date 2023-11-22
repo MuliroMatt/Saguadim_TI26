@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/**-------------------GERAL----------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+}
+#cadastra {
+    display: none;
+}
+#container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Reset de estilos para garantir consistência entre navegadores */
+
+
+/* Estiliza o cabeçalho com uma cor de fundo e texto simples */
+
+/* Estiliza links com sublinhado removido e cor de texto suave */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estiliza uma barra de navegação simples */
+
+
+/* Define estilos para uma seção principal do conteúdo */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estiliza cabeçalhos com tamanhos diferentes */
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* Estiliza caixas de texto de entrada e rótulos */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Estiliza botões com uma cor de fundo e texto claro */
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estiliza rodapé com cor de fundo escura e texto claro */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/** ###################CABECALHO##############*/
+nav{
+    top: 0;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.nav-container{
+    position: relative;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-container ul{
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+.nav-container .user-info{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-container li{
+    list-style: none;
+    padding: 10px 15px;
+}
+.nav-container li a{
+    text-decoration: none;
+    color: #333333;
+}
+.nav-container li a:hover{
+    transition: 0.5s;
+    color: #0f479c;
+}
+.nav-container li p{
+    color: #4CAF50;
+    cursor: default;
+}
+.nav-container .user-info li a:hover{
+    color: #b30021;
+}
+
+/** ######################################## CADASTRAPRODUTO ######################################## */
+.cadastraproduto-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 94.8vh;
+    background-color: #0f479c;
+    margin-top: 50px;
+}
+.cadastraproduto-container .wrapper{
+    margin: 15px 0;
+    width: 420px;
+    color: #fff;
+}
+.cadastraproduto-container .wrapper h1, p{
+    text-align: center;
+}
+.cadastraproduto-container .wrapper h1{
+    font-size: 36px;
+    margin-bottom: 3px;
+}
+.cadastraproduto-container .wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+.cadastraproduto-container .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+.cadastraproduto-container .input-box textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 45px 10px 20px;
+    resize: none;
+}
+.cadastraproduto-container .input-box input::placeholder {
+    color: #fff;
+}
+.cadastraproduto-container .input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.cadastraproduto-container #input-box-desc {
+    height: 150px;
+}
+.cadastraproduto-container .wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.cadastraproduto-container .wrapper .btn:hover{
+    transition: 0.7s;
+    background: #4CAF50;
+    color: #FFF;
+}
+.cadastraproduto-container #input-box-img{
+    height: auto;
+}
+
+/** -----ADICIONAR IMAGEM INPUT----- */
+.cadastraproduto-container .picture-input{
+    display: none;
+}
+.cadastraproduto-container .picture{
+    width: 420px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentColor;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+}
+.cadastraproduto-container .picture:hover{
+    color: #777;
+    background: #aaa;
+}
+.cadastraproduto-container .picture:active{
+    color: #999;
+    background: #ccc;
+}
+.cadastraproduto-container .picture:focus{
+    color: #777;
+    background: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0 , 0, .3);
+}
+.picture-img{
+    max-width: 100%;
+}
