@@ -5,7 +5,7 @@ isset($_SESSION['nomeusuario'])?$nomeusuario = $_SESSION['nomeusuario']: "";
 $nomeusuario = $_SESSION['nomeusuario'];
 
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./css/style.css">
 <nav>
     <div class="nav-container">
         <ul>
