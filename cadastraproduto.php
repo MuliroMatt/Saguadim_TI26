@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                         <input type="date" name="validade" id="validade" placeholder="R$">
                     </div>
                     <h3>Fornecedor</h3>
-                    <div class="input-box">
+                    <div class="input-box" id="input-box-cat">
                         <select name="fornecedor" id="fornecedor" required>
                             <?php
     
@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                             <?php
                                 }
                             ?>
-                        </select><hr>
+                        </select>
                     </div>
                     <button type="submit" class="btn">Cadastrar</button>
                 </form>
