@@ -65,10 +65,10 @@
                             <tr>
                                 <th>Produto</th>
                                 <th>Descrição</th>
+                                <th>Custo</th>
                                 <th>Preço</th>
                                 <th>Quantidade em Estoque</th>
-                                <th>Categoria</th>
-                                <th>Imagem</th>
+                                <th>Validade</th>
                                 <th>Status</th>
                                 <th>Alterar Dados</th>
                             </tr>
@@ -92,11 +92,12 @@
                                         }
                                         ?>
                                     </td> <!--DESCRIÇÃO-->
+                                    <td id="custo"><strong>R$ <?= $tbl[3] ?> <strong></td> 
                                     <td id="preco"><strong>R$ <?= $tbl[4] ?></strong></td> <!--PREÇO-->
                                     <?php
                                     if($tbl[3] > 0){
                                     ?>
-                                    <td id="quant"><strong><?= $tbl[3] ?></strong></td> <!--QUANTIDADE-->
+                                    <td id="quant"><strong><?= $tbl[5] ?></strong></td> <!--QUANTIDADE-->
                                     <?php
                                     } else{
                                     ?>
@@ -104,8 +105,7 @@
                                     <?php
                                     }
                                     ?>
-                                    <td id="cat"><?= $tbl [7] ?></td>
-                                    <td id="img"><img src="data:image/png;base64,<?= $tbl[5] ?>" onclick="change(this)"></td> <!--IMAGEM-->
+                                    <td id="cat"><?= $tbl [6] ?></td>
                                     <td id="status">
                                         <p class="status <?= $check = ($tbl[6] == "s") ? "ativo" : "inativo" ?>">
                                             <?= $check = ($tbl[6] == "s") ? "Ativo" : "Inativo" ?>

@@ -63,6 +63,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>Usuário</th>
+                                <th>E-mail</th>
                                 <th>Status</th>
                                 <th>Alterar dados</th>
                             </tr>
@@ -80,6 +81,7 @@
                             <tr class="<?= $classe ?>">
                                 <td><?=$tbl[0] ?></td>
                                 <td><?=$tbl[1] ?></td> <!--TRAZ SOMENTE A COLUNA 1 [NOME] DO BANCO -->
+                                <td><?=$tbl[5] ?></td>
                                 <!-- AO CLICAR NO BOTÃO ELE JÁ TRARÁ O ID DO USUÁRIO PARA A PÁGINA DO ALTERUSUARIO -->
                                 <td>
                                     <p class="status <?= $check = ($tbl[3] == "s") ? "ativo" : "inativo" ?>">

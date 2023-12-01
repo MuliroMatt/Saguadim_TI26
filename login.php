@@ -1,4 +1,4 @@
-|<?php
+<?php
 //*INICIA VARIAVEL DE SESSÃO
 session_start();
 

@@ -6,7 +6,7 @@
     #USUARIO DE ACESSO
     $usuario = "root";
     #SENHA DO USUARIO
-    $senha = "123";
+    $senha = "";
     #LINK DE ACESSO
     $link = mysqli_connect($servidor, $usuario, $senha, $banco);
 ?>

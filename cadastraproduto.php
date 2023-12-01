@@ -25,9 +25,6 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     }
 }
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -60,11 +57,11 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                     </div>
                     <h3>Preço</h3>
                     <div class="input-box" id="input-box-preco">
-                        <input type="decimal" name="valor" id="valor" placeholder="R$">
+                        <input type="decimal" name="preco" id="preco" placeholder="R$">
                     </div>
                     <h3>Validade</h3>
                     <div class="input-box" id="input-box-validade">
-                        <input type="date" name="validade" id="validade" placeholder="R$">
+                        <input type="date" name="validade" id="validade">
                     </div>
                     <h3>Fornecedor</h3>
                     <div class="input-box" id="input-box-cat">
