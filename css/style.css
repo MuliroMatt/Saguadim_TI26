@@ -412,3 +412,134 @@ nav {
     background-color: transparent;
     color: #007ACC;
 }
+
+
+/** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
+.listaproduto-container .form-container{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.listaproduto-container .form-container form{
+    display: flex;
+}
+.listaproduto-container .radio{
+    display: none;
+}
+.listaproduto-container .radio-label{
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #FFF;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.listaproduto-container .radio-label:not(:last-of-type){
+    border-right: 1px solid #34974d;
+}
+.listaproduto-container .radio:checked + .radio-label{
+    background: #34974d
+}
+
+/** ######################################## ALTERAUSUARIO ######################################## */
+.alterausuario-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 94.8vh;
+    background-color: #0f479c;
+    margin-top: 50px;
+}
+.alterausuario-container .wrapper{
+    margin: 15px 0;
+    width: 420px;
+    color: #fff;
+}
+.alterausuario-container .wrapper h1, p{
+    text-align: center;
+}
+.alterausuario-container .wrapper h1{
+    font-size: 36px;
+    margin-bottom: 3px;
+}
+.alterausuario-container .wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+.alterausuario-container .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+.alterausuario-container .input-box input::placeholder {
+    color: #fff;
+}
+.alterausuario-container .input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.alterausuario-container #input-box-password i{
+    cursor: pointer;
+}
+
+.alterausuario-container .wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.alterausuario-container .wrapper .btn:hover{
+    transition: 0.7s;
+    background: #4CAF50;
+    color: #FFF;
+}
+
+/** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
+.alterausuario-container #form-container{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.alterausuario-container .form-container #form-container {
+    display: flex;
+}
+.alterausuario-container .radio{
+    display: none;
+}
+.alterausuario-container .radio-label{
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #FFF;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.alterausuario-container .radio-label:not(:last-of-type){
+    border-right: 1px solid #34974d;
+}
+.alterausuario-container .radio:checked + .radio-label{
+    background: #34974d
+}
+
