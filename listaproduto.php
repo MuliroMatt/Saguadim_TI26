@@ -7,7 +7,7 @@
     $retorno = mysqli_query($link, $sql);
     $contador = 0;
 
-    #FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTNTON
+    #FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTTON
     $ativo = "s";
 
     #COLETA O BOTÃO MÉTODO POST VINDO DO HTML
@@ -41,7 +41,7 @@
         <title>LISTA PRODUTOS</title>
     </head>
     <body>
-        <div class="listaproduto-container">
+        <div class="listausuario-container">
             <main class="table"> 
                 <section class="table-header">
                     <h1>Lista de Produtos</h1>
@@ -58,6 +58,7 @@
                             <label class="radio-label" for="radiotodos">Todos</label>
                         </form>
                     </div>
+                    <a href="cadastraproduto.php" class="btn-cadastrar">Cadastrar novo produto</a>
                 </section>
                 <section class="table-body">
                     <table>
@@ -107,8 +108,8 @@
                                     ?>
                                     <td id="cat"><?= $tbl [6] ?></td>
                                     <td id="status">
-                                        <p class="status <?= $check = ($tbl[6] == "s") ? "ativo" : "inativo" ?>">
-                                            <?= $check = ($tbl[6] == "s") ? "Ativo" : "Inativo" ?>
+                                        <p class="status <?= $check = ($tbl[8] == "s") ? "ativo" : "inativo" ?>">
+                                            <?= $check = ($tbl[8] == "s") ? "Ativo" : "Inativo" ?>
                                         </p>
                                     </td>
                                     <td id="alt"><a href="alteraproduto.php?id=<?= $tbl[0] ?>"><button class="btn-alterar"><p class="text">Alterar</p></button></a></td>
@@ -123,3 +124,4 @@
         </div>
     </body>
 </html>
+

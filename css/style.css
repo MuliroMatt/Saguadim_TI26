@@ -1,337 +1,267 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
-/**-------------------GERAL----------------*/
-* {
+*{
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #262626;
 }
 
-body {
-    background-color: #f4f4f4;
-    font-family: 'Roboto', sans-serif;
-}
-/**###################################################### PÁGINA DE LOGIN #########################################*/
-.main.login{
+/** ======= LOGIN ======== */
+.main-wrapper{
+    background-color: #d1d1d1;
+    height: 100vh;
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.main.login .wrapper{
-    height: 100%;
+
+.authentication-container{
+    background-color: blueviolet;
+    box-shadow: 3px 3px 10px #888888;
+    display: flex;
+}
+
+.authentication-header{
+    background-image: url('../img/saguados.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 30px 20px;
+    height: 500px;
+    width: 300px;
+}
+
+.authentication-container .form-container{
+    background-color: #fff;
+    padding: 30px 20px;
+    height: 500px;
     width: 400px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container.login{
-    width: 100%;
-    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 8px;
-    border: 1px solid rgb(112, 112, 112);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
-.container .wrapper .input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 10px 0;
-}
-.container.login .input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
+
+.authentication-container .form-container input{
     border: none;
+    background: none;
     outline: none;
-    border-bottom: 1px solid #000;
-    font-size: 16px;
-    color: #000;
-    padding: 20px 45px 20px 20px;
-}
-.container.cadastra{
-    display: none;
-    width: 100%;
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 1px solid rgb(112, 112, 112);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-}
-.container .input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
 }
 
-
-/** ###################CABECALHO##############*/
-nav{
-    top: 0;
-    position: fixed;
-    height: 50px;
-    width: 100%;
-    z-index: 1;
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+.authentication-container .form-container .btn{
+    border: none;
+    background-color: #ffc916;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
 }
-.nav-container{
-    position: relative;
-    width: 1400px;
+
+.authentication-container .form-container .btn:hover{
+    background-color: #ffd446;
+}
+
+.input-title{
+    font-size: 12px;
+    color: #868686;
+}
+
+.input-box{
+    border: none;
+    padding: 15px 15px;
+    border: 1px solid #868686;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.login-container{
+    /* background-color: red; */
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
 }
-.nav-container ul{
-    width: 75%;
+
+.login-form{
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-container{
+    /* background-color: red; */
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.signup-form{
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.account-info{
+    font-size: 12px;
+    color: #868686;
+}
+
+.account-info a{
+    text-decoration: none;
+    color: #ffc916;
+}
+
+.account-info a{
+    color: #ffd446;
+}
+
+
+/** ======== CABECALHO ======== */
+
+nav {
+    /* background-color: blue; */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px .5px 10px #888888;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+}
+
+.nav-container{
+    /* background-color: gold; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container .nav-list{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-container .nav-list li{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    padding: 0 15px 0 15px;
+}
+
+.nav-container .nav-list li:hover{
+    border-bottom: 1px solid #262626;
+}
+
+.nav-container .nav-list a{
+    height: 100%;
     display: flex;
     align-items: center;
 }
+
 .nav-container .user-info{
-    width: 25%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 15px;
 }
-.nav-container li{
-    list-style: none;
+
+.nav-container .user-info a:hover{
+    color: red;
+}
+
+
+/** ============ LISTA USUÁRIO =============*/
+
+.listausuario-container{
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.table{
+
+    border: 1px solid black;
+    min-height: 600px;
+    border-radius: 10px;
+    width: 1200px;
+}
+
+.table .table-header{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
     padding: 10px 15px;
 }
-.nav-container li a{
-    text-decoration: none;
-    color: #333333;
-}
-.nav-container li a:hover{
-    transition: 0.5s;
-    color: #0f479c;
-}
-.nav-container li p{
-    color: #4CAF50;
-    cursor: default;
-}
-.nav-container .user-info li a:hover{
-    color: #b30021;
-}
 
-/** ######################################## CADASTRAPRODUTO ######################################## */
-.cadastraproduto-container{
+/** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
+/* .listausuario-container .form-container{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.listausuario-container .form-container form{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 94.8vh;
-    background-color: #0f479c;
-    margin-top: 50px;
 }
-.cadastraproduto-container .wrapper{
-    margin: 15px 0;
-    width: 420px;
-    color: #fff;
-}
-.cadastraproduto-container .wrapper h1, p{
-    text-align: center;
-}
-.cadastraproduto-container .wrapper h1{
-    font-size: 36px;
-    margin-bottom: 3px;
-}
-.cadastraproduto-container .wrapper .input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 10px 0;
-}
-.cadastraproduto-container .input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-}
-.cadastraproduto-container .input-box select{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-}
-.cadastraproduto-container #input-box-cat {
-    height: 60px;
-}
-.cadastraproduto-container .input-box textarea{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    padding: 10px 45px 10px 20px;
-    resize: none;
-}
-.cadastraproduto-container #input-box-desc {
-    height: 150px;
-}
-.cadastraproduto-container .input-box input::placeholder {
-    color: #fff;
-}
-.cadastraproduto-container .input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-.cadastraproduto-container .wrapper .btn{
-    width: 100%;
-    height: 45px;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #4CAF50;
-    font-weight: 600;
-}
-.cadastraproduto-container .wrapper .btn:hover{
-    transition: 0.7s;
-    background: #4CAF50;
-    color: #FFF;
-}
-.cadastraproduto-container #input-box-img{
-    height: auto;
-}
-
-/** -----ADICIONAR IMAGEM INPUT----- */
-.cadastraproduto-container .picture-input{
+.listausuario-container .radio{
     display: none;
 }
-.cadastraproduto-container .picture{
-    width: 420px;
-    aspect-ratio: 16/9;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-    border: 2px dashed currentColor;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
-    outline: none;
-}
-.cadastraproduto-container .picture:hover{
-    color: #777;
-    background: #aaa;
-}
-.cadastraproduto-container .picture:active{
-    color: #999;
-    background: #ccc;
-}
-.cadastraproduto-container .picture:focus{
-    color: #777;
-    background: #aaa;
-    box-shadow: 0 0 10px rgba(0, 0 , 0, .3);
-}
-.picture-img{
-    max-width: 100%;
-}
-
-/** ######################################## CADASTRAUSUARIO ######################################## */
-.cadastrausuario-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #0f479c;
-}
-.cadastrausuario-container .wrapper{
-    width: 420px;
-    color: #fff;
-}
-.cadastrausuario-container .wrapper h1, p{
-    text-align: center;
-}
-.cadastrausuario-container .wrapper h1{
-    font-size: 36px;
-    margin-bottom: 3px;
-}
-.cadastrausuario-container .wrapper .input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
-.cadastrausuario-container .input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
-}
-.cadastrausuario-container .input-box input::placeholder {
-    color: #fff;
-}
-.cadastrausuario-container .input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-.cadastrausuario-container #input-box-password i{
-    cursor: pointer;
-}
-.cadastrausuario-container .wrapper .btn{
-    width: 100%;
-    height: 45px;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #4CAF50;
-    font-weight: 600;
-}
-.cadastrausuario-container .wrapper .btn:hover{
-    transition: 0.7s;
-    background: #4CAF50;
+.listausuario-container .radio-label{
+    padding: 8px 14px;
+    font-size: 14px;
     color: #FFF;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.listausuario-container .radio-label:not(:last-of-type){
+    border-right: 1px solid #34974d;
+}
+.listausuario-container .radio:checked + .radio-label{
+    background: #34974d
 }
 
-/** ######################################## LISTAUSUARIO ######################################## */
+.table-body{
+    background-color: #34974d;
+}
+
+.table-body table{
+    background-color: blue;
+    width: 100%;
+}
+
+.table-body thead tr th{
+    background-color: cyan;
+    
+}
+
+.table-body thead tr .id-alter{
+
+} */
+
 .listausuario-container{
-    background-color: #0f479c;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -353,7 +283,6 @@ nav{
     align-items: center;
     width: 100%;
     height: 10%;
-    background-color: #fff4;
     padding: 1rem 1rem;
 }
 .listausuario-container .table-body{
@@ -381,6 +310,7 @@ nav{
 }
 .listausuario-container table{
     width: 100%;
+    background-color: #868686;
 }
 .listausuario-container table, th, td{
     text-align: center;
@@ -465,138 +395,7 @@ nav{
     background: #34974d
 }
 
-/** ######################################## LISTAPRODUTO ######################################## */
-.listaproduto-container{
-    background-color: #0f479c;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.listaproduto-container main.table{
-    margin-top: 50px;
-    width: 80vw;
-    height: 90vh;
-    background-color: #fff5;
-    backdrop-filter: blur(7px);
-    box-shadow: 0 .4rem .8rem #0005;
-    border-radius: .8rem;
-    overflow: hidden;
-}
-.listaproduto-container .table-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 10%;
-    background-color: #fff4;
-    padding: 1rem 1rem;
-}
-.listaproduto-container .table-body{
-    width: 95%;
-    max-height: calc(89% - 1.6rem);
-    background-color: #FFFb;
-    margin: .8rem auto;
-    border-radius: .6rem;
-    overflow: auto;
-}
-.listaproduto-container .table-body th{
-    position: sticky;
-}
-.listaproduto-container .table-body::-webkit-scrollbar{
-    width: 0.5rem;
-    height: 0.5rem;
-}
-.listaproduto-container .table-body::-webkit-scrollbar-thumb{
-    border-radius: .5rem;
-    background-color: #0004;
-    visibility: hidden;
-}
-.listaproduto-container .table-body:hover::-webkit-scrollbar-thumb{
-    visibility: visible;
-}
-#esgotado p{
-    color: #ef233c;
-    font-weight: 500;
-}
-.listaproduto-container table{
-    width: 100%;
-}
-.listaproduto-container td img{
-    width: 75px;
-    height: auto;
-    margin-right: .5rem;
-    border-radius: 10px;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.listaproduto-container td{
-    width: 15%;
-    height: 125px;
-}
-.listaproduto-container #desc{
-    width: 20%;
-}
-.listaproduto-container #desc a{
-    color: #007ACC;
-    text-decoration: none;
-    font-weight: 600;
-}
-.listaproduto-container #status{
-    width: 15%;
-}
-.listaproduto-container #img{
-    width: 10%;
-}
-
-
-/** IMAGEM COM ZOOM */
-.listaproduto-container td img.zoom {
-    z-index: 999;
-    cursor: zoom-out;
-    display: block;
-    width: 500px;
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-/** ##################################### */
-.listaproduto-container table, th, td{
-    text-align: center;
-    border-collapse: collapse;
-    padding: 1rem;
-}
-.listaproduto-container thead th{
-    top: 0;
-    left: 0;
-    background-color: #d5d1defe;
-}
-.listaproduto-container tbody tr.even {
-    background-color: #0000000b;
-}
-.listaproduto-container tbody tr:hover{
-    transition: 0.5s;
-    background-color: #fff6;
-}
-.listaproduto-container .status {
-    padding: .4rem 0;
-    border-radius: 2rem;
-}
-.listaproduto-container .status.ativo{
-    background-color: #86e49d;
-    color: #006b21;
-}
-.listaproduto-container .status.inativo{
-    background-color: #d893a3;
-    color: #b30021;
-}
-
-/** BOTÃO ALTERAR */
-.listaproduto-container .btn-alterar {
-    width: 6rem;
+.listausuario-container .btn-cadastrar {
     padding: 10px 15px;
     background-color: #007ACC;
     outline: 3px #007ACC solid;
@@ -605,45 +404,11 @@ nav{
     border: none;
     cursor: pointer;
     transition: 400ms;
+    color: #fff;
+    font-weight: bold;
 }
-.listaproduto-container .btn-alterar .text {
-    color: white;
-    font-weight: 700;
-    font-size: 1em;
-    transition: 400ms;
-}
-.listaproduto-container .btn-alterar:hover {
+
+.listausuario-container .btn-cadastrar:hover {
     background-color: transparent;
-}
-.listaproduto-container .btn-alterar:hover .text {
     color: #007ACC;
 }
-
-/** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
-.listaproduto-container .form-container{
-    display: inline-flex;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-}
-.listaproduto-container .form-container form{
-    display: flex;
-}
-.listaproduto-container .radio{
-    display: none;
-}
-.listaproduto-container .radio-label{
-    padding: 8px 14px;
-    font-size: 14px;
-    color: #FFF;
-    background: #4CAF50;
-    cursor: pointer;
-    transition: background 0.1s;
-}
-.listaproduto-container .radio-label:not(:last-of-type){
-    border-right: 1px solid #34974d;
-}
-.listaproduto-container .radio:checked + .radio-label{
-    background: #34974d
-}
-

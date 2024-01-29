@@ -39,8 +39,8 @@
         <title>LISTA USUARIOS</title>
     </head>
     <body>
-        <div class="listausuario-container">
-            <main class="table"> 
+        <main class="listausuario-container">
+            <div class="table"> 
                 <section class="table-header">
                     <h1>Lista de Usuários</h1>
                     <div class="form-container">
@@ -56,16 +56,17 @@
                             <label class="radio-label" for="radiotodos">Todos</label>
                         </form>
                     </div>
+                    <a href="cadastrausuario.php" class="btn-cadastrar">Cadastrar novo usuário</a>
                 </section>
                 <section class="table-body">
                     <table>
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Usuário</th>
-                                <th>E-mail</th>
-                                <th>Status</th>
-                                <th>Alterar dados</th>
+                                <th class="id-column">id</th>
+                                <th class="usu-column">Usuário</th>
+                                <th class="email-column">E-mail</th>
+                                <th class="status-column">Status</th>
+                                <th class="alter-column">Alterar dados</th>
                             </tr>
                         </thead>
                         <!-- INICIO DE PHP + HTML -->
@@ -96,7 +97,7 @@
                         ?>
                     </table>
                 </section>
-            </main>
-        </div>
+            </div>
+        </main>
     </body>
 </html>
