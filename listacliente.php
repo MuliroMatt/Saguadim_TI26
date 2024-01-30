@@ -56,6 +56,7 @@
                             <label class="radio-label" for="radiotodos">Todos</label>
                         </form>
                     </div>
+                    <a href="cadastracliente.html" class="btn-cadastrar">Cadastrar novo cliente</a>
                 </section>
                 <section class="table-body">
                     <table>

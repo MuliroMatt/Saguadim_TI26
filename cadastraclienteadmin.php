@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         mysqli_query($link, $sqllog);
 
         echo"<script>window.alert('CLIENTE CADASTRADO');</script>";
-        echo"<script>window.location.href='logincliente.html';</script>";
+        echo"<script>window.location.href='listacliente.php';</script>";
     }
 }
 ?>

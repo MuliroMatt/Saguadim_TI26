@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     //*SE USUÁRIO NÃO EXISTE LOGA, SE NÃO, NÃO LOGA
     if($retorno == 0){
         echo"<script>window.alert('USUÁRIO INCORRETO');</script>";
-        echo"<script>window.location.href='login.html';</script>";
+        echo"<script>window.location.href='loginadmin.html';</script>";
 
     }
     else{
