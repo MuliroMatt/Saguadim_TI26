@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //*VERIFICA SE EXISTE
     if($resultado >= 1){
         echo"<script>window.alert('EMAIL JÁ CADASTRADO');</script>";
-        echo"<script>window.location.href='login.html';</script>";
+        echo"<script>window.location.href='listausuario.php';</script>";
     }
     else{
         $sql = "INSERT INTO usuarios(usu_login, usu_senha, usu_status, usu_key, usu_email) 
@@ -48,21 +48,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <title>CADASTRO DE USUÁRIO</title>
     </head>
     <body>
-        <div class="cadastrausuario-container">
+        <div class="cadastra-container">
             <div class="wrapper">
-                <form action="cadastrausuario.php" method="post">
+                <form action="cadastrausuario.php" method="post"  class="cadastra-form">
                     <h1>Registrar usuário</h1>
                     <div class="input-box" id="input-box-name">
-                        <input id="login-name" type="text" name="login" placeholder="Nome">
-                        <i class='bx bxs-user'></i>
+                        <input id="login-name" type="text" name="login" placeholder="Nome" required>
                     </div>
                     <div class="input-box" id="input-box-email">
-                        <input id="login-email" type="email" name="email" placeholder="Email">
-                        <i class='bx bxs-mail'></i>
+                        <input id="login-email" type="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="input-box" id="input-box-password">
-                        <input id="login-password" type="password" name="senha" placeholder="Senha">
-                        <span id="MostraSenha" onclick="MostraSenha()"><i class='bx bxs-lock-alt'></i></span>
+                        <input id="login-password" type="password" name="senha" placeholder="Senha" required>
                     </div>
                     <button type="submit" class="btn">Registrar</button>
                 </form>

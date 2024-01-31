@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>FORNECEDOR</title>
 </head>
 <body>
-    <div class="cadastraproduto-container">
+    <div class="cadastrausuario-container">
         <div class="wrapper">
             <form action="fornecedor.php" method="post">
                 <div class="input-box">

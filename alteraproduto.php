@@ -51,9 +51,9 @@ while ($tbl = mysqli_fetch_array($retorno)) {
         <title>ALTERA PRODUTO</title>
     </head>
     <body>
-        <div class="alterausuario-container">
+        <div class="cadastra-container">
             <div class="wrapper">
-                <form action="alteraproduto.php" method="post" enctype="multipart/form-data">
+                <form action="alteraproduto.php" method="post" enctype="multipart/form-data" class="cadastra-form">
                     <input type="hidden" name="id" value="<?=$id ?>">
                     <h3>Produto</h3>
                     <div class="input-box" id="input-box-name">
@@ -97,7 +97,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                     </div>
 
                     <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>
-                    <div id="form-container">
+                    <div class="form-container">
                         <input type="radio" name="status" class="radio" value="s" id="radioativo" <?= $status == 's' ? "checked" : "" ?>>
                         <label class="radio-label" for="radioativo">Ativo</label>
                         <input type="radio" name="status" class="radio" value="n" id="radioinativo" <?= $status == 'n' ? "checked" : "" ?>>

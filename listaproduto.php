@@ -41,7 +41,7 @@
         <title>LISTA PRODUTOS</title>
     </head>
     <body>
-        <div class="listausuario-container">
+        <div class="lista-container">
             <main class="table"> 
                 <section class="table-header">
                     <h1>Lista de Produtos</h1>

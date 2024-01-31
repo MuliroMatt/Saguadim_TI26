@@ -36,9 +36,9 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     <title>CADASTRA PRODUTO</title>
 </head>
 <body>
-<div class="cadastraproduto-container">
+<div class="cadastra-container">
             <div class="wrapper">
-                <form action="cadastraproduto.php" method="post" enctype="multipart/form-data">
+                <form action="cadastraproduto.php" method="post" enctype="multipart/form-data" class="cadastra-form">
                     <h3>Produto</h3>
                     <div class="input-box" id="input-box-name">
                         <input type="text" name="nome" id="nome" placeholder="Nome do Produto">

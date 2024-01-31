@@ -39,7 +39,7 @@
         <title>LISTA USUARIOS</title>
     </head>
     <body>
-        <main class="listausuario-container">
+        <main class="lista-container">
             <div class="table"> 
                 <section class="table-header">
                     <h1>Lista de Usuários</h1>

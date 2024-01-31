@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $_SESSION['idusuario'] = $tbl[0];
             $_SESSION['nomeusuario'] = $tbl[1];
         }
-        echo"<script>window.location.href='#.php';</script>";
+        echo"<script>window.location.href='cliente.php';</script>";
     }
 }
 

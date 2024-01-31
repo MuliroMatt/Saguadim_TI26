@@ -88,12 +88,12 @@
     background-color: #ffd446;
 }
 
-.input-title{
+.authentication-container .input-title{
     font-size: 12px;
     color: #868686;
 }
 
-.input-box{
+.authentication-container .input-box{
     border: none;
     padding: 15px 15px;
     border: 1px solid #868686;
@@ -182,7 +182,7 @@
 /** ======== CABECALHO ======== */
 
 nav {
-    /* background-color: blue; */
+    background-color: #d1d1d1; 
     height: 70px;
     display: flex;
     justify-content: center;
@@ -240,7 +240,7 @@ nav {
 
 /** ============ LISTA USUÁRIO =============*/
 
-.listausuario-container{
+.lista-container{
     padding-top: 70px;
     display: flex;
     justify-content: center;
@@ -266,19 +266,19 @@ nav {
 }
 
 /** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
-/* .listausuario-container .form-container{
+/* .lista-container .form-container{
     display: inline-flex;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
-.listausuario-container .form-container form{
+.lista-container .form-container form{
     display: flex;
 }
-.listausuario-container .radio{
+.lista-container .radio{
     display: none;
 }
-.listausuario-container .radio-label{
+.lista-container .radio-label{
     padding: 8px 14px;
     font-size: 14px;
     color: #FFF;
@@ -286,10 +286,10 @@ nav {
     cursor: pointer;
     transition: background 0.1s;
 }
-.listausuario-container .radio-label:not(:last-of-type){
+.lista-container .radio-label:not(:last-of-type){
     border-right: 1px solid #34974d;
 }
-.listausuario-container .radio:checked + .radio-label{
+.lista-container .radio:checked + .radio-label{
     background: #34974d
 }
 
@@ -311,31 +311,34 @@ nav {
 
 } */
 
-.listausuario-container{
+.lista-container{
+    background-color: #d1d1d1;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.listausuario-container main.table{
-    margin-top: 50px;
+.lista-container main.table{
     width: 80vw;
-    height: 90vh;
+    height: 80vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
     overflow: hidden;
+    border: none;
 }
-.listausuario-container .table-header{
+.lista-container .table-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 10%;
     padding: 1rem 1rem;
+    border: none;
+    box-shadow: 0 .3rem .5rem #0005;
 }
-.listausuario-container .table-body{
+.lista-container .table-body{
     width: 95%;
     max-height: calc(89% - 1.6rem);
     background-color: #FFFb;
@@ -343,112 +346,110 @@ nav {
     border-radius: .6rem;
     overflow: auto;
 }
-.listausuario-container .table-body tr{
+.lista-container .table-body tr{
     position: sticky;
 }
-.listausuario-container .table-body::-webkit-scrollbar{
+.lista-container .table-body::-webkit-scrollbar{
     width: 0.5rem;
     height: 0.5rem;
 }
-.listausuario-container .table-body::-webkit-scrollbar-thumb{
+.lista-container .table-body::-webkit-scrollbar-thumb{
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
-.listausuario-container .table-body:hover::-webkit-scrollbar-thumb{
+.lista-container .table-body:hover::-webkit-scrollbar-thumb{
     visibility: visible;
 }
-.listausuario-container table{
+.lista-container table{
     width: 100%;
     background-color: #868686;
 }
-.listausuario-container table, th, td{
+.lista-container table, th, td{
     text-align: center;
     border-collapse: collapse;
     padding: 1rem;
 }
-.listausuario-container thead th{
+.lista-container thead th{
     top: 0;
     left: 0;
     background-color: #d5d1defe;
 }
-.listausuario-container tbody tr.even {
+.lista-container tbody tr.even {
     background-color: #0000000b;
 }
-.listausuario-container tbody tr:hover{
+.lista-container tbody tr:hover{
     transition: 0.5s;
     background-color: #fff6;
 }
-.listausuario-container .status {
+.lista-container .status {
     padding: .4rem 0;
     border-radius: 2rem;
 }
-.listausuario-container .status.ativo{
+.lista-container .status.ativo{
     background-color: #86e49d;
     color: #006b21;
 }
-.listausuario-container .status.inativo{
+.lista-container .status.inativo{
     background-color: #d893a3;
     color: #b30021;
 }
 
 /** BOTÃO ALTERAR */
-.listausuario-container .btn-alterar {
+.lista-container .btn-alterar {
     width: 6rem;
     padding: 10px 15px;
-    background-color: #007ACC;
-    outline: 3px #007ACC solid;
+    background-color: #ffc916;
+    outline: 3px #ffc916 solid;
     outline-offset: -3px;
     border-radius: 2rem;
     border: none;
     cursor: pointer;
     transition: 400ms;
 }
-.listausuario-container .btn-alterar .text {
+.lista-container .btn-alterar .text {
     color: white;
     font-weight: 700;
     font-size: 1em;
     transition: 400ms;
 }
-.listausuario-container .btn-alterar:hover {
-    background-color: transparent;
-}
-.listausuario-container .btn-alterar:hover .text {
-    color: #007ACC;
+.lista-container .btn-alterar:hover {
+    background-color: #ffd446;
 }
 
+
 /** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
-.listausuario-container .form-container{
+.lista-container .form-container{
     display: inline-flex;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
-.listausuario-container .form-container form{
+.lista-container .form-container form{
     display: flex;
 }
-.listausuario-container .radio{
+.lista-container .radio{
     display: none;
 }
-.listausuario-container .radio-label{
+.lista-container .radio-label{
     padding: 8px 14px;
     font-size: 14px;
     color: #FFF;
-    background: #4CAF50;
+    background: #ffd446;
     cursor: pointer;
     transition: background 0.1s;
 }
-.listausuario-container .radio-label:not(:last-of-type){
-    border-right: 1px solid #34974d;
+.lista-container .radio-label:not(:last-of-type){
+    border-right: 1px solid #f7bd00;
 }
-.listausuario-container .radio:checked + .radio-label{
-    background: #34974d
+.lista-container .radio:checked + .radio-label{
+    background: #ffc916
 }
 
-.listausuario-container .btn-cadastrar {
+.lista-container .btn-cadastrar {
     padding: 10px 15px;
-    background-color: #007ACC;
-    outline: 3px #007ACC solid;
+    background-color: #ffc916;
+    outline: 3px #ffc916 solid;
     outline-offset: -3px;
     border-radius: 2rem;
     border: none;
@@ -458,7 +459,198 @@ nav {
     font-weight: bold;
 }
 
-.listausuario-container .btn-cadastrar:hover {
+.lista-container .btn-cadastrar:hover {
+    background-color: #ffd446;
+}
+
+
+/** ========== CADASTRA ======== */
+
+.cadastra-container{
+    padding: 90px 0;
+    background-color: #d1d1d1;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastra-container.cliente{
+    padding-bottom: 0;
+}
+
+.cadastra-container input{
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+}
+
+.cadastra-container .input-box{
+    border: none;
+    padding: 15px 15px;
+    border: 1px solid #868686;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.cadastra-container #desc{
+    resize: none;
+    height: 100px;
     background-color: transparent;
-    color: #007ACC;
+    border: none;
+    outline: none;
+}
+
+.cadastra-container .btn{
+    border: none;
+    background-color: #ffc916;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.cadastra-container .btn:hover{
+    background-color: #ffd446;
+}
+
+.cadastra-form{
+    width: 500px;
+}
+
+/** ============ ALTERA  =============*/
+.cadastra-container .form-container{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    margin: 10px 0;
+}
+.cadastra-container .form-container form{
+    display: flex;
+}
+.cadastra-container .radio{
+    display: none;
+}
+.cadastra-container .radio-label{
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #FFF;
+    background: #ffd446;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.cadastra-container .radio-label:not(:last-of-type){
+    border-right: 1px solid #ffc916;
+}
+.cadastra-container .radio:checked + .radio-label{
+    background: #ffc916
+}
+
+
+/** ============= CLIENTE =============== */
+header{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    /* position: fixed; */
+    width: 100%;
+    height: 15vh;
+}
+.header-container{
+    height: 100px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cliente-container{
+    background-color: #d1d1d1;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cliente-container .wrapper{
+    width: 1200px;
+    display: flex;
+    gap: 50px;
+}
+
+.perfil-container{
+    background-color: #fff;
+    width: 250px;
+    height: 500px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+}
+
+.perfil-container .user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.perfil-container .perfil-pic{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.user-list{
+    width: 100%;
+}
+
+.user-list li a{
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 0 15px;
+}
+
+.user-list li a:hover{
+    background-color: #eeeeee;
+}
+
+.user-list li button{
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 0 15px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.user-list li button:hover{
+    background-color: #eeeeee;
+}
+
+.cliente-container .user-info{
+    height: 500px;
+    width: 900px;
+    border-radius: 7px;
+    background-color: #fff;
 }

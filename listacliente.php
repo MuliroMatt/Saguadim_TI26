@@ -39,7 +39,7 @@
         <title>LISTA CLIENTES</title>
     </head>
     <body>
-        <div class="listausuario-container">
+        <div class="lista-container">
             <main class="table"> 
                 <section class="table-header">
                     <h1>Lista de Clientes</h1>
@@ -56,7 +56,7 @@
                             <label class="radio-label" for="radiotodos">Todos</label>
                         </form>
                     </div>
-                    <a href="cadastracliente.html" class="btn-cadastrar">Cadastrar novo cliente</a>
+                    <a href="cadastraclienteadmin.php" class="btn-cadastrar">Cadastrar novo cliente</a>
                 </section>
                 <section class="table-body">
                     <table>

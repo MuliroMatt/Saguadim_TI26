@@ -1,6 +1,6 @@
 
 <?php
-include("conectadb.php");
+include("cabecalho.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['nome'];
@@ -40,3 +40,45 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>CADASTRO DE CLIENTE</title>
+    </head>
+    <body>
+        <div class="cadastra-container cliente">
+            <div class="wrapper">
+                <form action="cadastraclienteadmin.php" method="post" class="cadastra-form">
+                    <h1>Registrar Cliente</h1>
+                    <div class="input-box" id="input-box-name">
+                        <input id="login-name" type="text" name="nome" placeholder="Nome">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="number" name="telefone" placeholder="(00) 0000-0000">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="text" name="cpf" placeholder="000-000-000-00">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="text" name="curso" placeholder="Curso">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="text" name="sala" placeholder="Sala">
+                    </div>
+                    <div class="input-box" id="input-box-email">
+                        <input id="login-email" type="password" name="senha" placeholder="Senha">
+                    </div>
+                    
+                    <button type="submit" class="btn">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
