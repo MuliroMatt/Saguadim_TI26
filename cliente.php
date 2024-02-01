@@ -1,5 +1,5 @@
 <?php
-include("conectadb.php");
+include("cabecalho2.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_query($link, $sql);
 
     echo "<script>window.alert('cliente alterado com sucesso!');</script>";
+    echo "<script>window.location.href='listacliente.php';</script>";
 }
 
 $id = $_GET['id'];
@@ -38,7 +39,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
     $status =  $tbl[7];
 }
 ?>
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,20 +51,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
     <title>Saguadim</title>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>Saguadim</h1>
-            </div>
-            <div class="header-links">
-                <ul>
-                    <li><a href="">início</a></li>
-                    <li><a href="">menu</a></li>
-                    <li><a href="">perfil <i class="bi bi-person-circle"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    
     <main class="cliente-container">
         <div class="wrapper">
             <div class="perfil-container">
@@ -76,54 +64,40 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                 <div class="user-list">
                     <ul>
                         <li><button>Meu Perfil</button></li>
+                        <li><button>Minhas Informações</button></li>
                         <li><button>Meus Pedidos</button></li>
                         <li><a href="logoutcliente.php">Sair</a></li>
                     </ul>
                 </div>
             </div>
             <div class="user-info">
-                <form action="alteracliente.php" method="post" enctype="multipart/form-data" class="cadastra-form">
-                    <input type="hidden" name="id" value="<?=$id?>">
-                    <h3>Cliente</h3>
-                    <div class="input-box" id="input-box-name">
-                        <input type="text" name="nome" id="nome" value="<?=$nome?>">
+                <form action="alteracliente.php" method="post" enctype="multipart/form-data" class="cliente-form">
+                    <h1>Informações do usuário</h1>
+                    <div class="cliente-input">
+                        <input type="hidden" name="id" value="">
+                        <div class="input-box" id="input-box-name">
+                            <input type="text" name="nome" id="nome" placeholder="Nome">
+                        </div>
+                        <div class="input-box" id="input-box-email">
+                            <input type="email" name="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="input-box telefone" id="input-box-tel">
+                            <input type="" name="telefone" id="telefone" placeholder="Telefone">
+                        </div>
+                        <div class="input-box cpf" id="input-box-cpf">
+                            <input id="login-email" type="text" name="cpf" placeholder="CPF">
+                            <i class='bx bxs-mail'></i>
+                        </div>
+                        <div class="input-box curso" id="input-box-curso">
+                            <input id="login-email" type="text" name="curso" placeholder="Curso">
+                            <i class='bx bxs-mail'></i>
+                        </div>
+                        <div class="input-box sala" id="input-box-email">
+                            <input id="login-email" type="text" name="sala" placeholder="Sala">
+                            <i class='bx bxs-mail'></i>
+                        </div>
                     </div>
-                    <h3>E-mail</h3>
-                    <div class="input-box" id="input-box-preco">
-                        <input type="email" name="email" id="email" value="<?=$email?>">
-                    </div>
-                    <h3>Telefone</h3>
-                    <div class="input-box" id="input-box-name">
-                        <input type="number" name="telefone" id="telefone" value="<?=$telefone?>">
-                    </div>
-                    <h3>CPF</h3>
-                    <div class="input-box" id="input-box-email">
-                        <input id="login-email" type="text" name="cpf" placeholder="000-000-000-00">
-                        <i class='bx bxs-mail'></i>
-                    </div>
-                    <h3>Curso</h3>
-                    <div class="input-box" id="input-box-email">
-                        <input id="login-email" type="text" name="curso" placeholder="Curso">
-                        <i class='bx bxs-mail'></i>
-                    </div>
-                    <h3>Sala</h3>
-                    <div class="input-box" id="input-box-email">
-                        <input id="login-email" type="text" name="sala" placeholder="Sala">
-                        <i class='bx bxs-mail'></i>
-                    </div>
-                    <h3>Saldo</h3>
-                    <div class="input-box" id="input-box-email">
-                        <input id="login-email" type="number" name="saldo" placeholder="Saldo">
-                        <i class='bx bxs-mail'></i>
-                    </div>
-                    <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>
-                    <div class="form-container">
-                        <input type="radio" name="status" class="radio" value="s" id="radioativo" <?= $status == 's' ? "checked" : "" ?>>
-                        <label class="radio-label" for="radioativo">Ativo</label>
-                        <input type="radio" name="status" class="radio" value="n" id="radioinativo" <?= $status == 'n' ? "checked" : "" ?>>
-                        <label class="radio-label" for="radioinativo">Inativo</label>
-                    </div>
-                    <button type="submit" class="btn">Alterar</button>
+                    <button type="submit" class="btn">Alterar Informações</button>
                 </form>
             </div>
         </div>

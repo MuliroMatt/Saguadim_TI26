@@ -14,10 +14,13 @@ $nomeusuario = $_SESSION['nomeusuario'];
         </div>
         <ul class="nav-list">
             <li><a href="listausuario.php">Usuários</a></li>
+            <!-- <li><a href="cadastrausuario.php">Cadastrar usuário</a></li> -->
             <li><a href="listaproduto.php">Produtos</a></li>
+            <!-- <li><a href="cadastraproduto.php">Cadastrar produto</a></li> -->
             <li><a href="listacliente.php">Clientes</a></li>
-            <li><a href="listafornecedor.php">Fornecedores</a></li>
+            <!-- <li><a href="cadastracliente.php">Cadastrar cliente</a></li> -->
             <li><a href="encomendas.php">Encomendas</a></li>
+            <li><a href="fornecedor.php">Fornecedor</a></li>
         </ul>
         <ul class="user-info">
             <!--VALIDA SE SESSÃO DE USUARIO ESTÁ AUTENTICADA, SENÃO, RETORNA PARA LOGIN -->

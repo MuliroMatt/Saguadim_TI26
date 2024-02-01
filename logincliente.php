@@ -1,47 +1,80 @@
 <?php
-//*INICIA VARIAVEL DE SESSÃO
-session_start();
-
-//*INCLUE CÓDIGO DE CONEXÃO DO BANCO
-include("conectadb.php");
-
-//*APÓS CLICK NO FORM POST
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    //*QUERY DE VALIDA SE USUÁRIO EXISTE
-    $sql = "SELECT COUNT(cli_id) FROM clientes WHERE cli_email = '$email' AND cli_senha = '$senha' AND cli_status = 's'";
-    $retorno = mysqli_query($link, $sql);
-
-    //*SUGESTÃO ARIEL DE SANITIZAÇÃO
-    $retorno = mysqli_fetch_array($retorno)[0];
     
-    //*GRAVA LOG  
-    $sql = '"'.$sql.'"';
-    $sqllog = "INSERT INTO tab_log (tab_query, tab_data) VALUES ($sql, NOW())";
-    mysqli_query($link, $sqllog);
 
-    //*SE USUÁRIO NÃO EXISTE LOGA, SE NÃO, NÃO LOGA
-    if($retorno == 0){
-        echo"<script>window.alert('USUÁRIO INCORRETO OU SENHA INCORRETO');</script>";
-        echo"<script>window.location.href='logincliente.html';</script>";
+    include("conectadb.php");
 
-    }
-    else{
-        $sql = "SELECT * FROM clientes WHERE cli_email = '$email' AND cli_senha = '$senha' AND cli_status = 's'";
-        $retorno = mysqli_query($link, $sql);
-
-        //*GRAVA LOG
-        $sql = '"'.$sql.'"';
-        $sqllog = "INSERT INTO tab_log (tab_query, tab_data) VALUES ($sql, NOW())";
-        mysqli_query($link, $sqllog);
-        while($tbl = mysqli_fetch_array($retorno)){
-            $_SESSION['idusuario'] = $tbl[0];
-            $_SESSION['nomeusuario'] = $tbl[1];
-        }
-        echo"<script>window.location.href='cliente.php';</script>";
-    }
-}
-
+    $sql = "SELECT * FROM clientes WHERE cli_status = 's'";
+    $retorno = mysqli_query($link, $sql);
 ?>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fc1c840fda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Saguadim - Login adm</title>
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="logo">
+            <h1>saguadim</h1>
+        </div>
+        <div class="authentication-container">
+            <div class="authentication-header">
+            </div>
+            <div class="form-container cliente">
+                <div class="login-container cliente" id="login">
+                    <h1 class="form-title cliente">Login</h1>
+                    <form action="logincliente.php" method="post" class="login-form">
+                        <p class="input-title">E-mail</p>
+                        <div class="input-box">
+                            <input type="email" name="email" id="email" placeholder="Insira seu E-mail" required>
+                        </div>
+                        <p class="input-title">Senha</p>
+                        <div class="input-box">
+                            <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
+                        </div>
+                        <!-- <button class="btn">Entrar</button> -->
+                        <a href="cliente.php?id=<?=$tbl[0] ?>"><button class="btn">Entrar</button></a>
+                    </form>
+                    <p class="account-info">
+                        Não tem conta?<a href="#" id="toggleCadastra"> Cadastre-se</a>
+                    </p>
+                </div>
+                <div class="signup-container" id="cadastra">
+                    <h1 class="form-title.cliente">Cadastre-se</h1>
+                    <form action="cadastracliente.php" method="post" class="signup-form">
+                        <p class="input-title">Username</p>
+                        <div class="input-box">
+                            <input type="text" name="nome" id="nome" placeholder="Insira seu nome de usuário" required>
+                        </div>
+                        <p class="input-title">E-mail</p>
+                        <div class="input-box">
+                            <input type="email" name="email" id="email" placeholder="Insira seu E-mail" required>
+                        </div>
+                        <p class="input-title">Senha</p>
+                        <div class="input-box">
+                            <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
+                        </div>
+                        
+                            <input type="hidden" name="telefone" id="telefone">
+                            <input type="hidden" name="sala" id="sala">
+                            <input type="hidden" name="curso" id="curso">
+                            <input type="hidden" name="saldo" id="saldo">
+                            <input type="hidden" name="cpf" id="cpf">
+
+                        <button class="btn">Cadastrar</button>
+                    </form>
+                    <p class="account-info">
+                        Já tem uma conta?<a href="#" id="toggleLogin"> Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
+

@@ -39,8 +39,8 @@
         <title>LISTA USUARIOS</title>
     </head>
     <body>
-        <main class="lista-container">
-            <div class="table"> 
+        <div class="lista-container">
+            <main class="table"> 
                 <section class="table-header">
                     <h1>Lista de Usuários</h1>
                     <div class="form-container">
@@ -97,7 +97,7 @@
                         ?>
                     </table>
                 </section>
-            </div>
-        </main>
+            </main>
+        </div>
     </body>
 </html>
