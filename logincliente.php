@@ -1,10 +1,28 @@
 <?php
-    
+include("cabecalho2.php");
 
-    include("conectadb.php");
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    $email = $_POST['emailcliente'];
+    $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM clientes WHERE cli_status = 's'";
+    $sql = "SELECT COUNT(cli_id) FROM clientes WHERE cli_email = '$email' AND cli_senha = '$senha'";
     $retorno = mysqli_query($link, $sql);
+    while ($tbl = mysqli_fetch_array($retorno)) {
+        $cont = $tbl[0];
+    }
+    if($cont == 1){
+        $sql = "SELECT * FROM clientes WHERE cli_email = '$email' AND cli_senha = '$senha' AND cli_status = 's'";
+        $retorno = mysqli_query($link, $sql);
+        while ($tbl = mysqli_fetch_array($retorno)) {
+            $_SESSION['idusuario'] = $tbl[0];
+            $_SESSION['emailcliente'] = $tbl[2];
+        }
+        echo "<script>window.location.href='cliente.php';</script>";
+    } else {
+        echo "<script>window.alert('USUÁRIO OU SENHA INCORRETOS');</script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +48,14 @@
                     <form action="logincliente.php" method="post" class="login-form">
                         <p class="input-title">E-mail</p>
                         <div class="input-box">
-                            <input type="email" name="email" id="email" placeholder="Insira seu E-mail" required>
+                            <input type="email" name="emailcliente" id="emailcliente" placeholder="Insira seu E-mail" required>
                         </div>
                         <p class="input-title">Senha</p>
                         <div class="input-box">
                             <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
                         </div>
                         <!-- <button class="btn">Entrar</button> -->
-                        <a href="cliente.php?id=<?=$tbl[0] ?>"><button class="btn">Entrar</button></a>
+                        <button class="btn" type="submit">Entrar</button>
                     </form>
                     <p class="account-info">
                         Não tem conta?<a href="#" id="toggleCadastra"> Cadastre-se</a>

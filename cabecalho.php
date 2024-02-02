@@ -3,7 +3,6 @@ include("conectadb.php");
 session_start();
 isset($_SESSION['nomeusuario'])?$nomeusuario = $_SESSION['nomeusuario']: "";
 $nomeusuario = $_SESSION['nomeusuario'];
-
 ?>
 <link rel="stylesheet" href="./css/style.css">
 <nav>

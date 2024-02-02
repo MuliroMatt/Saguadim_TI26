@@ -1,45 +1,14 @@
 <?php
-include("cabecalho2.php");
+include("conectadb.php");
+session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST['id'];
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $cpf = $_POST['cpf'];
-    $curso = $_POST['curso'];
-    $sala = $_POST['sala'];
-    $saldo = $_POST['saldo'];
-    $status = $_POST['status'];
-
-    // Atualiza os dados no banco de dados
-    $sql = "UPDATE clientes SET cli_nome = '$nome', cli_email = '$email', cli_telefone = '$telefone', cli_cpf = '$cpf',
-    cli_curso = '$curso', cli_sala = '$sala', cli_saldo = '$saldo', cli_status = '$status'";
-
-    $sql .= " WHERE cli_id = $id";
-
-    mysqli_query($link, $sql);
-
-    echo "<script>window.alert('cliente alterado com sucesso!');</script>";
-    echo "<script>window.location.href='listacliente.php';</script>";
-}
-
-$id = $_GET['id'];
-$sql = "SELECT * FROM clientes WHERE cli_id = '$id'";
-$retorno = mysqli_query($link, $sql);
-
-while ($tbl = mysqli_fetch_array($retorno)) {
-    $nome =  $tbl[1];
-    $email =  $tbl[2];
-    $telefone =  $tbl[3];
-    $cpf =  $tbl[4];
-    $curso =  $tbl[5];
-    $sala =  $tbl[6];
-    $saldo =  $tbl[8];
-    $status =  $tbl[7];
-}
+// Check if the keys are set in the $_SESSION array
+$idusuario = isset($_SESSION['idusuario']) ? $_SESSION['idusuario'] : null;
+$nomeusuario = isset($_SESSION['nomeusuario']) ? $_SESSION['nomeusuario'] : null;
+echo($idusuario)
+// Now you can use $idusuario and $nomeusuario safely
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +20,20 @@ while ($tbl = mysqli_fetch_array($retorno)) {
     <title>Saguadim</title>
 </head>
 <body>
-    
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Saguadim</h1>
+            </div>
+            <div class="header-links">
+                <ul>
+                    <li><a href="">início</a></li>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">perfil <i class="bi bi-person-circle"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
     <main class="cliente-container">
         <div class="wrapper">
             <div class="perfil-container">
