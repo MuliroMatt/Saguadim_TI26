@@ -1,28 +1,35 @@
 <?php
 include("cabecalho.php");
 
+//* Verifica se a requisição é do tipo POST 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //* Obtém os dados do formulário 
     $id = $_POST['id'];
     $login = $_POST['login'];
     $senha = $_POST['senha'];
     $email = $_POST['email'];
     $status = $_POST['status'];
 
-    // Atualiza os dados no banco de dados
+    //* Atualiza os dados no banco de dados
     $sql = "UPDATE usuarios SET usu_login = '$login', usu_senha = '$senha', usu_email = '$email', usu_status = '$status'";
-
     $sql .= " WHERE usu_id = $id";
 
+    //* Executa a query de atualização no banco de dados
     mysqli_query($link, $sql);
 
-    echo "<script>window.alert('usuduto alterado com sucesso!');</script>";
+    //* Exibe alerta de sucesso e redireciona para a lista de usuários
+    echo "<script>window.alert('Usuário alterado com sucesso!');</script>";
     echo "<script>window.location.href='listausuario.php';</script>";
 }
 
+//* Obtém o ID do usuário a ser alterado da query string
 $id = $_GET['id'];
+
+//* Consulta os dados do usuário específico no banco de dados
 $sql = "SELECT * FROM usuarios WHERE usu_id = '$id'";
 $retorno = mysqli_query($link, $sql);
 
+//* Obtém os dados do usuário para preencher o formulário
 while ($tbl = mysqli_fetch_array($retorno)) {
     $login = $tbl[1];
     $senha = $tbl[2];
@@ -58,6 +65,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                     <div class="input-box" id="input-box-preco">
                         <input type="email" name="email" id="email" value="<?=$email?>">
                     </div>
+                    <!-- Verifica se o usuário está ativo ou não -->
                     <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>
                     <div class="form-container">
                         <input type="radio" name="status" class="radio" value="s" id="radioativo" <?= $status == 's' ? "checked" : "" ?>>

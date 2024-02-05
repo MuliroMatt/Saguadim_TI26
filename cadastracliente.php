@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //*VERIFICA SE EXISTE
     if($resultado >= 1){
         echo"<script>window.alert('CLIENTE JÁ CADASTRADO');</script>";
-        echo"<script>window.location.href='cadastracliente.php';</script>";
+        echo"<script>window.location.href='logincliente.php';</script>";
     }
     else{
         $sql = "INSERT INTO clientes(cli_nome, cli_email, cli_telefone, cli_cpf, cli_curso, cli_sala, cli_status, cli_senha) 
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         mysqli_query($link, $sqllog);
 
         echo"<script>window.alert('CLIENTE CADASTRADO');</script>";
-        echo"<script>window.location.href='logincliente.html';</script>";
+        echo"<script>window.location.href='logincliente.php';</script>";
     }
 }
 ?>

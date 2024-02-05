@@ -1,7 +1,9 @@
 <?php
 include("cabecalho.php");
 
+//* Verifica se a requisição é do tipo POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //* Obtém os dados do formulário 
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
@@ -12,22 +14,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fornecedor = $_POST['fornecedor'];
     $status = $_POST['status'];
 
-    // Atualiza os dados no banco de dados
+    //* Atualiza os dados no banco de dados
     $sql = "UPDATE produtos SET pro_nome = '$nome', pro_descricao = '$descricao', pro_custo = '$custo', pro_preco = '$preco', 
     pro_quantidade = '$quantidade', pro_validade = '$validade', fk_for_id = '$fornecedor', pro_status = '$status'";
 
     $sql .= " WHERE pro_id = $id";
 
+    //* Executa a query de atualização no banco de dados
     mysqli_query($link, $sql);
 
+    //* Exibe alerta de sucesso e redireciona para a lista de produtos
     echo "<script>window.alert('Produto alterado com sucesso!');</script>";
     echo "<script>window.location.href='listaproduto.php';</script>";
 }
 
+//* Obtém o ID do produto a ser alterado da query string
 $id = $_GET['id'];
+
+//* Consulta os dados do produto específico no banco de dados
 $sql = "SELECT * FROM produtos WHERE pro_id = '$id'";
 $retorno = mysqli_query($link, $sql);
 
+//* Obtém os dados do produto para preencher o formulário
 while ($tbl = mysqli_fetch_array($retorno)) {
     $nome = $tbl[1];
     $descricao = $tbl[2];
@@ -39,6 +47,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
     $status = $tbl[8];
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -95,7 +104,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                             ?>
                         </select>
                     </div>
-
+                    <!-- Verifica se o usuário está ativo ou não -->
                     <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>
                     <div class="form-container">
                         <input type="radio" name="status" class="radio" value="s" id="radioativo" <?= $status == 's' ? "checked" : "" ?>>

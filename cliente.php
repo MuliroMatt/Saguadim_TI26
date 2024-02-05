@@ -2,11 +2,35 @@
 include("conectadb.php");
 session_start();
 
-// Check if the keys are set in the $_SESSION array
-$idusuario = isset($_SESSION['idusuario']) ? $_SESSION['idusuario'] : null;
-$nomeusuario = isset($_SESSION['nomeusuario']) ? $_SESSION['nomeusuario'] : null;
-echo($idusuario)
-// Now you can use $idusuario and $nomeusuario safely
+$id = $_SESSION['idusuario']; 
+
+$sql = "SELECT * FROM clientes WHERE cli_id = '$id'";
+$retorno = mysqli_query($link, $sql);
+
+while ($tbl = mysqli_fetch_array($retorno)) {
+    $nome =  $tbl[1];
+    $email =  $tbl[2];
+    $telefone =  $tbl[3];
+    $cpf =  $tbl[4];
+    $curso =  $tbl[5];
+    $sala =  $tbl[6];
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $cpf = $_POST['cpf'];
+    $curso = $_POST['curso'];
+    $sala = $_POST['sala'];
+    
+    $sql = "UPDATE clientes SET cli_nome = '$nome', cli_email = '$email', cli_telefone = '$telefone', cli_cpf = '$cpf',
+    cli_curso = '$curso', cli_sala = '$sala' WHERE cli_id = '$id'";
+    
+    mysqli_query($link, $sql); 
+    
+    echo "<script>window.alert('Dados alterados com sucesso!');</script>";
+}
 ?>
 
 
@@ -53,30 +77,27 @@ echo($idusuario)
                 </div>
             </div>
             <div class="user-info">
-                <form action="alteracliente.php" method="post" enctype="multipart/form-data" class="cliente-form">
+                <form action="cliente.php" method="post" class="cliente-form">
                     <h1>Informações do usuário</h1>
                     <div class="cliente-input">
-                        <input type="hidden" name="id" value="">
-                        <div class="input-box" id="input-box-name">
-                            <input type="text" name="nome" id="nome" placeholder="Nome">
+                        <input type="hidden" name="id">
+                        <div class="input-box">
+                            <input type="text" name="nome" placeholder="Nome" value="<?=$nome?>" required>
                         </div>
-                        <div class="input-box" id="input-box-email">
-                            <input type="email" name="email" id="email" placeholder="E-mail">
+                        <div class="input-box">
+                            <input type="email" name="email" placeholder="E-mail" value="<?=$email?>" required>
                         </div>
-                        <div class="input-box telefone" id="input-box-tel">
-                            <input type="" name="telefone" id="telefone" placeholder="Telefone">
+                        <div class="input-box telefone">
+                            <input type="text" name="telefone" placeholder="Telefone" id="telefone" value="<?=$telefone?>" required>
                         </div>
-                        <div class="input-box cpf" id="input-box-cpf">
-                            <input id="login-email" type="text" name="cpf" placeholder="CPF">
-                            <i class='bx bxs-mail'></i>
+                        <div class="input-box cpf">
+                            <input type="text" name="cpf" placeholder="CPF" id="cpf" value="<?=$cpf?>" required>
                         </div>
-                        <div class="input-box curso" id="input-box-curso">
-                            <input id="login-email" type="text" name="curso" placeholder="Curso">
-                            <i class='bx bxs-mail'></i>
+                        <div class="input-box curso">
+                            <input type="text" name="curso" placeholder="Curso" value="<?=$curso?>" required>
                         </div>
-                        <div class="input-box sala" id="input-box-email">
-                            <input id="login-email" type="text" name="sala" placeholder="Sala">
-                            <i class='bx bxs-mail'></i>
+                        <div class="input-box sala">
+                            <input type="text" name="sala" placeholder="Sala" value="<?=$sala?>" required>
                         </div>
                     </div>
                     <button type="submit" class="btn">Alterar Informações</button>
@@ -85,4 +106,5 @@ echo($idusuario)
         </div>
     </main>
 </body>
+<script src="script.js"></>
 </html>

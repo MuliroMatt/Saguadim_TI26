@@ -9,4 +9,3 @@ document.getElementById("toggleLogin").addEventListener("click", function () {
     document.getElementById("cadastra").style.display = "none";
     document.getElementById("login").style.display = "flex";
 });
-

@@ -43,5 +43,4 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         echo"<script>window.location.href='backoffice.php';</script>";
     }
 }
-
 ?>

@@ -1,20 +1,20 @@
 <?php
-    #ABRE UMA CONEXÃO COM O BANCO DE DADOS
+    //*ABRE UMA CONEXÃO COM O BANCO DE DADOS
     include("cabecalho.php");
 
-    #PASSANDO UMA INSTRUÇÃO AO BANCO DE DADOS
+    //*PASSANDO UMA INSTRUÇÃO AO BANCO DE DADOS
     $sql = "SELECT * FROM usuarios WHERE usu_status = 's'";
     $retorno = mysqli_query($link, $sql);
-    $contador = 0; #INICIALIZA UM CONTADOR PARA ACOMPANHAR AS LINHAS
+    $contador = 0; //*INICIALIZA UM CONTADOR PARA ACOMPANHAR AS LINHAS
 
-    #FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTNTON
+    //*FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTNTON
     $ativo = "s";
 
-    #COLETA O BOTÃO MÉTODO POST VINDO DO HTML
+    //*COLETA O BOTÃO MÉTODO POST VINDO DO HTML
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $ativo = $_POST['ativo'];
 
-        #VERIFICA SE O USUARIO ESTÁ ATIVO PARA LISTA, SE 'S' LISTA SENÃO, NÃO LISTA
+        //*VERIFICA SE O USUARIO ESTÁ ATIVO PARA LISTA, SE 'S' LISTA SENÃO, NÃO LISTA
         if ($ativo == 's') {
             $sql = "SELECT * FROM usuarios WHERE usu_status = 's'";
             $retorno = mysqli_query($link, $sql);
@@ -71,12 +71,12 @@
                         </thead>
                         <!-- INICIO DE PHP + HTML -->
                         <?php
-                        #FAZENDO PREECHIMENTO DE TABELA USANDO WHILE (ENQUANTO TEM DADOS PARA PREENCHER)
+                        //*FAZENDO PREECHIMENTO DE TABELA USANDO WHILE (ENQUANTO TEM DADOS PARA PREENCHER)
                         while ($tbl = mysqli_fetch_array($retorno)) {
-                            $contador++; #INCREMENTA O CONTADOR EM CADA ITERAÇÃO
-                            #ADICIONA UMA CLASSE ALTERNADA COM BASE NO CONTADOR
+                            $contador++; //*INCREMENTA O CONTADOR EM CADA ITERAÇÃO
+                            //*ADICIONA UMA CLASSE ALTERNADA COM BASE NO CONTADOR
                             $classe = ($contador % 2 == 0) ? 'even' : 'odd';
-                            #MAS AQUI EU FECHO PARA TRABLHAR COM HTML SIMULTANEAMENTE
+                            //*MAS AQUI EU FECHO PARA TRABLHAR COM HTML SIMULTANEAMENTE
                         ?>
                         <tbody>
                             <tr class="<?= $classe ?>">

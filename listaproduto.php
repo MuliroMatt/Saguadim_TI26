@@ -1,20 +1,20 @@
 <?php
-    #ABRE UMA CONEXÃO COM O BANCO DE DADOS
+    //*ABRE UMA CONEXÃO COM O BANCO DE DADOS
     include("cabecalho.php");
 
-    #PASSANDO UMA INSTRUÇÃO AO BANCO DE DADOS
+    //*PASSANDO UMA INSTRUÇÃO AO BANCO DE DADOS
     $sql = "SELECT * FROM produtos WHERE pro_status = 's'";
     $retorno = mysqli_query($link, $sql);
     $contador = 0;
 
-    #FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTTON
+    //*FORÇA SEMPRE TRAZER 'S' NA VARIÁVEL PARA UTILIZARMOS NOS RADIO BUTTON
     $ativo = "s";
 
-    #COLETA O BOTÃO MÉTODO POST VINDO DO HTML
+    //*COLETA O BOTÃO MÉTODO POST VINDO DO HTML
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $ativo = $_POST['ativo'];
 
-        #VERIFICA SE O USUARIO ESTÁ ATIVO PARA LISTA, SE 'S' LISTA SENÃO, NÃO LISTA
+        //*VERIFICA SE O USUARIO ESTÁ ATIVO PARA LISTA, SE 'S' LISTA SENÃO, NÃO LISTA
         if ($ativo == 's') {
             $sql = "SELECT * FROM produtos WHERE pro_status = 's'";
             $retorno = mysqli_query($link, $sql);
@@ -76,7 +76,7 @@
                         </thead>
                         <!-- INICIO DE PHP + HTML -->
                         <?php
-                        #FAZENDO PREENCHIMENTO DE TABELA USANDO WHILE (ENQUANTO TEM DADOS PARA PREENCHER)
+                        //*FAZENDO PREENCHIMENTO DE TABELA USANDO WHILE (ENQUANTO TEM DADOS PARA PREENCHER)
                         while ($tbl = mysqli_fetch_array($retorno)) {
                             $contador++;
                             $classe = ($contador % 2 == 0) ? 'even' : 'odd';

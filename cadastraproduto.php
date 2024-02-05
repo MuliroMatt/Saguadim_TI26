@@ -1,7 +1,10 @@
 <?php
+//* Inclui o cabeçalho comum a várias páginas
 include("cabecalho.php");
 
+//* Verifica se a requisição é do tipo POST
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
+    //* Obtém os dados do formulário enviado via POST
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
     $custo = $_POST['custo'];
@@ -10,22 +13,27 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $validade = $_POST['validade'];
     $fornecedor_id = $_POST['fornecedor'];
 
+    //* Verifica se o produto já existe no banco de dados
     $sql = "SELECT COUNT(pro_id) FROM produtos WHERE pro_nome = '$nome'";
     $retorno = mysqli_query($link, $sql);
     $cont = (mysqli_fetch_array($retorno)[0]);
 
+    //* Se o produto não existir, realiza o cadastro
     if($cont == 0){
         $sql = "INSERT INTO produtos(pro_nome, pro_descricao, pro_custo, pro_preco, pro_quantidade, pro_validade, fk_for_id, pro_status)
         VALUES('$nome', '$descricao', $custo, $preco, $quantidade, '$validade', $fornecedor_id, 's')";
         mysqli_query($link, $sql);
+
+        //* Exibe alerta de sucesso e redireciona para a lista de produtos
         echo"<script>window.alert('PRODUTO CADASTRADO COM SUCESSO');</script>";
         echo"<script>window.location.href='listaproduto.php';</script>";
     }else {
+        //* Exibe alerta informando que o produto já existe
         echo"<script>window.alert('PRODUTO JÁ EXISTENTE');</script>";
     }
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,17 +74,20 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                     <h3>Fornecedor</h3>
                     <div class="input-box" id="input-box-cat">
                         <select name="fornecedor" id="fornecedor" required>
-                            <?php
-    
-                                $sql = "SELECT for_id, for_nome FROM fornecedores";
-                                $retorno = mysqli_query($link, $sql);
-    
-                                while($tbl = mysqli_fetch_array($retorno)){
-                            ?>
-                                    <option value="<?=$tbl[0]?>"><?=$tbl[1]?></option>
-                            <?php
-                                }
-                            ?>
+                        <?php
+                            //* Consulta SQL para obter os registros da tabela 'fornecedores'
+                            $sql = "SELECT for_id, for_nome FROM fornecedores";
+                            
+                            //* Executa a consulta e obtém o resultado
+                            $retorno = mysqli_query($link, $sql);
+
+                            //* Itera sobre os registros retornados e cria opções para o elemento select
+                            while($tbl = mysqli_fetch_array($retorno)){
+                        ?>
+                            <option value="<?=$tbl[0]?>"><?=$tbl[1]?></option>
+                        <?php
+                            }
+                        ?>
                         </select>
                     </div>
                     <button type="submit" class="btn">Cadastrar</button>

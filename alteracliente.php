@@ -1,7 +1,9 @@
 <?php
 include("cabecalho.php");
 
+//* Verifica se a requisição é do tipo POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //* Obtém os dados do formulário
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -12,22 +14,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $saldo = $_POST['saldo'];
     $status = $_POST['status'];
 
-    // Atualiza os dados no banco de dados
+    //* Atualiza os dados no banco de dados
     $sql = "UPDATE clientes SET cli_nome = '$nome', cli_email = '$email', cli_telefone = '$telefone', cli_cpf = '$cpf',
     cli_curso = '$curso', cli_sala = '$sala', cli_saldo = '$saldo', cli_status = '$status'";
 
     $sql .= " WHERE cli_id = $id";
 
+    //* Executa a query de atualização no banco de dados
     mysqli_query($link, $sql);
 
-    echo "<script>window.alert('cliente alterado com sucesso!');</script>";
+    //* Exibe alerta de sucesso e redireciona para a lista de clientes
+    echo "<script>window.alert('Cliente alterado com sucesso!');</script>";
     echo "<script>window.location.href='listacliente.php';</script>";
 }
 
+//* Obtém o ID do cliente a ser alterado da query string
 $id = $_GET['id'];
+
+//* Consulta os dados do cliente específico no banco de dados
 $sql = "SELECT * FROM clientes WHERE cli_id = '$id'";
 $retorno = mysqli_query($link, $sql);
 
+//* Obtém os dados do cliente para preencher o formulário
 while ($tbl = mysqli_fetch_array($retorno)) {
     $nome =  $tbl[1];
     $email =  $tbl[2];
@@ -39,6 +47,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
     $status =  $tbl[7];
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -87,6 +96,7 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                         <input id="login-email" type="number" name="saldo" placeholder="Saldo">
                         <i class='bx bxs-mail'></i>
                     </div>
+                    <!-- Verifica se o usuário está ativo ou não -->
                     <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>
                     <div class="form-container">
                         <input type="radio" name="status" class="radio" value="s" id="radioativo" <?= $status == 's' ? "checked" : "" ?>>
