@@ -96,7 +96,7 @@
                                     <td id="custo"><strong>R$ <?= $tbl[3] ?> <strong></td> 
                                     <td id="preco"><strong>R$ <?= $tbl[4] ?></strong></td> <!--PREÇO-->
                                     <?php
-                                    if($tbl[3] > 0){
+                                    if($tbl[5] > 0){
                                     ?>
                                     <td id="quant"><strong><?= $tbl[5] ?></strong></td> <!--QUANTIDADE-->
                                     <?php
@@ -106,7 +106,7 @@
                                     <?php
                                     }
                                     ?>
-                                    <td id="cat"><?= $tbl [6] ?></td>
+                                    <td id="validade"><?=$tbl[6]?></td>
                                     <td id="status">
                                         <p class="status <?= $check = ($tbl[8] == "s") ? "ativo" : "inativo" ?>">
                                             <?= $check = ($tbl[8] == "s") ? "Ativo" : "Inativo" ?>
