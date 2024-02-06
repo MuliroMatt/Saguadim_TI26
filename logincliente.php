@@ -1,6 +1,6 @@
 <?php
-include("cabecalho2.php");
-
+include("conectadb.php");
+session_start();
 //* Verifica se a requisição é do tipo POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     //* Obtém os dados do formulário enviado via POST

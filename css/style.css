@@ -514,31 +514,40 @@ header{
     background-color: #fff;
     display: flex;
     justify-content: center;
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
-    height: 15vh;
+    height: 90px;
 }
 .header-container{
-    height: 100px;
+    height: 100%;
     width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: cyan; */
+}
+
+.header-links ul{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
 }
 
 .cliente-container{
     background-color: #d1d1d1;
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 90px;
 }
 
 .cliente-container .wrapper{
     width: 1200px;
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    
 }
 
 .perfil-container{
@@ -559,6 +568,11 @@ header{
     justify-content: center;
     flex-direction: column;
 }
+.perfil-container .user h1{
+    text-align: center;
+    width: 200px;
+}
+
 
 .perfil-container .perfil-pic{
     width: 100px;
@@ -598,10 +612,31 @@ header{
     padding: 0 15px;
     width: 100%;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .user-list li button:hover{
     background-color: #eeeeee;
+}
+
+.cliente-container .perfil{
+    height: 500px;
+    width: 900px;
+    border-radius: 7px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cliente-container .user-pedidos{
+    height: 500px;
+    width: 900px;
+    border-radius: 7px;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    justify-content: center;
 }
 
 .cliente-container .user-info{
@@ -610,7 +645,7 @@ header{
     border-radius: 7px;
     background-color: #fff;
     padding: 20px;
-    display: flex;
+    display: none;
     justify-content: center;
 }
 
@@ -668,3 +703,4 @@ header{
 .cliente-container .btn:hover{
 background-color: #ffd446;
 }
+

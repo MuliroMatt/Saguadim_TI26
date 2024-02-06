@@ -65,18 +65,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="perfil-pic">
                         <i class="bi bi-person"></i>
                     </div>
-                    <h1>Usuário</h1>
+                    <h1><?=$nome?></h1>
                 </div>
                 <div class="user-list">
                     <ul>
-                        <li><button>Meu Perfil</button></li>
-                        <li><button>Minhas Informações</button></li>
-                        <li><button>Meus Pedidos</button></li>
+                        <li><button onclick="togglePerfil()">Meu Perfil</button></li>
+                         <li><button onclick="toggleInfo()">Minhas Informações</button></li> 
+                        <li><button onclick="togglePedidos()">Meus Pedidos</button></li>
                         <li><a href="logoutcliente.php">Sair</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="user-info">
+            <div class="perfil" id="perfil">
+                <h1>Perfil</h1>
+            </div>
+            <div class="user-info" id="user-info">
                 <form action="cliente.php" method="post" class="cliente-form">
                     <h1>Informações do usuário</h1>
                     <div class="cliente-input">
@@ -103,8 +106,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn">Alterar Informações</button>
                 </form>
             </div>
+            <div class="user-pedidos" id="pedidos">
+                <h1>Pedidos</h1>
+            </div>
         </div>
     </main>
 </body>
-<script src="script.js"></>
+<script src="script.js"></script>
 </html>
