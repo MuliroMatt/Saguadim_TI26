@@ -66,28 +66,28 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                     <input type="hidden" name="id" value="<?=$id ?>">
                     <h3>Produto</h3>
                     <div class="input-box" id="input-box-name">
-                        <input type="text" name="nome" id="nome" value="<?=$nome?>">
+                        <input type="text" name="nome" id="nome" value="<?=$nome?>" required>
                     </div>
                     <h3>Descrição</h3>
                     <div class="input-box" id="input-box-desc">
                         <!-- <input id ="desc" type="text" name="descricao" id="descricao" placeholder="Descrição"> -->
-                        <textarea id="desc" name="descricao" rows="4" cols="50" placeholder="Descrição"><?=$descricao?></textarea>
+                        <textarea id="desc" name="descricao" rows="4" cols="50" placeholder="Descrição" required><?=$descricao?></textarea>
                     </div>
                     <h3>Custo</h3>
                     <div class="input-box" id="input-box-preco">
-                        <input type="decimal" name="custo" id="custo" value="<?=$custo?>">
+                        <input type="decimal" name="custo" id="custo" value="<?=$custo?>" required>
                     </div>
                     <h3>Custo</h3>
                     <div class="input-box" id="input-box-preco">
-                        <input type="decimal" name="preco" id="preco" value="<?=$preco?>">
+                        <input type="decimal" name="preco" id="preco" value="<?=$preco?>" required>
                     </div>
                     <h3>Quantidade</h3>
                     <div class="input-box" id="input-box-qnt">
-                        <input type="number" name="quantidade" id="quantidade" value="<?=$quantidade?>">
+                        <input type="number" name="quantidade" id="quantidade" value="<?=$quantidade?>" required>
                     </div>
                     <h3>Validade</h3>
                     <div class="input-box" id="input-box-qnt">
-                        <input type="date" name="validade" id="validade">
+                        <input type="date" name="validade" id="validade" required>
                     </div>
                     <h3>Fornecedor</h3>
                     <div class="input-box" id="input-box-cat">

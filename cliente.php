@@ -51,9 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
             <div class="header-links">
                 <ul>
-                    <li><a href="">início</a></li>
-                    <li><a href="">menu</a></li>
-                    <li><a href="">perfil <i class="bi bi-person-circle"></i></a></li>
+                    <li><a href="">Início</a></li>
+                    <li><a href="menu.php">Menu</a></li>
+                    <div class="dropdown">
+                        <li><a href="cliente.php">Perfil</a></li>
+                            <div class="content">
+                                <a href="logoutcliente.php"><i class='bx bx-exit'></i>Sair</a>
+                            </div>
+                        </div>
+                    <!-- <div class="dropdown">
+                        <li><a href="">perfil</a></li>
+                        <a href="logoutcliente.php">Sair</a>
+                    </div> -->
                 </ul>
             </div>
         </div>
@@ -63,23 +72,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="perfil-container">
                 <div class="user">
                     <div class="perfil-pic">
-                        <i class="bi bi-person"></i>
+                        <i class="bi bi-person-fill"></i>
+                        
                     </div>
                     <h1><?=$nome?></h1>
                 </div>
                 <div class="user-list">
                     <ul>
-                        <li><button onclick="togglePerfil()">Meu Perfil</button></li>
-                         <li><button onclick="toggleInfo()">Minhas Informações</button></li> 
+                        <li><button onclick="toggleInfo()">Meu Perfil</button></li> 
                         <li><button onclick="togglePedidos()">Meus Pedidos</button></li>
                         <li><a href="logoutcliente.php">Sair</a></li>
                     </ul>
                 </div>
             </div>
             <div class="perfil" id="perfil">
-                <h1>Perfil</h1>
+                <div class="user-card">
+                    <h1>Meu Perfil</h1>
+                    <i class="bi bi-person"></i>
+                    <button onclick="toggleInfo()">Ver perfil</button>
+                </div>
+                <div class="pedidos-card">
+                    <h1>Meus pedidos</h1>
+                    <i class="bi bi-bag"></i>
+                    <button onclick="togglePedidos()">Ver pedidos</button>
+                </div>
             </div>
             <div class="user-info" id="user-info">
+            <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
                 <form action="cliente.php" method="post" class="cliente-form">
                     <h1>Informações do usuário</h1>
                     <div class="cliente-input">
@@ -107,6 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </form>
             </div>
             <div class="user-pedidos" id="pedidos">
+                <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
                 <h1>Pedidos</h1>
             </div>
         </div>

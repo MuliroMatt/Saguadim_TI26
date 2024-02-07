@@ -55,15 +55,15 @@ while ($tbl = mysqli_fetch_array($retorno)) {
                     <input type="hidden" name="id" value="<?=$id?>">
                     <h3>Usuário</h3>
                     <div class="input-box" id="input-box-name">
-                        <input type="text" name="login" id="login" value="<?=$login?>">
+                        <input type="text" name="login" id="login" value="<?=$login?>" required>
                     </div>
                     <h3>Senha</h3>
                     <div class="input-box" id="input-box-name">
-                        <input type="password" name="senha" id="senha" value="<?=$senha?>">
+                        <input type="password" name="senha" id="senha" value="<?=$senha?>" required>
                     </div>
                     <h3>E-mail</h3>
                     <div class="input-box" id="input-box-preco">
-                        <input type="email" name="email" id="email" value="<?=$email?>">
+                        <input type="email" name="email" id="email" value="<?=$email?>" required>
                     </div>
                     <!-- Verifica se o usuário está ativo ou não -->
                     <h3>Status: <?= $status == 's' ? "Ativo" : "Inativo" ?></h3>

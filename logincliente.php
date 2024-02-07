@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         //* Redireciona o usuário para a página 'cliente.php'
-        echo "<script>window.location.href='cliente.php';</script>";
+        echo "<script>window.location.href='menu.php';</script>";
     } else {
         //* Exibe uma mensagem de alerta se as credenciais do usuário forem inválidas
         echo "<script>window.alert('USUÁRIO OU SENHA INCORRETOS');</script>";
