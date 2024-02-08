@@ -29,7 +29,12 @@
         </div>
     </header>
     <main class="menu-container">
-
+        
+        <div class="produtos">
+            <h2>Pastel</h2>
+            <h3>R$5,00</h3>
+        </div>
+        
     </main>
 </body>
 </html>
