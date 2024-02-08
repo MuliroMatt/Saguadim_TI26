@@ -3,6 +3,6 @@
 
     session_destroy();
 
-    header("Location: logincliente.php");
+    header("Location: cliente.php");
     exit;
 ?>

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //* Armazena informações do usuário na sessão
         while ($tbl = mysqli_fetch_array($retorno)) {
-            $_SESSION['idusuario'] = $tbl[0];
+            $_SESSION['idcliente'] = $tbl[0];
             $_SESSION['emailcliente'] = $tbl[2];
 
         }

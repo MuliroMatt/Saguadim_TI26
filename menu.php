@@ -14,25 +14,22 @@
     <title>Saguadim</title>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>Saguadim</h1>
-            </div>
-            <div class="header-links">
-                <ul>
-                    <li><a href="">início</a></li>
-                    <li><a href="menu.php">menu</a></li>
-                    <li><a href="cliente.php">perfil</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <?php 
+        include("cabecalhocliente.php");
+    ?>
     <main class="menu-container">
-        
-        <div class="produtos">
-            <h2>Pastel</h2>
-            <h3>R$5,00</h3>
+        <div class="grid-produtos">
+        <?php
+        while ($tbl = mysqli_fetch_array($retorno)) {
+        ?>
+            <div class="produtos">
+
+                <h2><?=$tbl[1]?></h2>
+                <h3>R$<?=$tbl[4]?></h3>
+            </div>
+            <?php 
+        }
+        ?>
         </div>
         
     </main>
