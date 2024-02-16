@@ -14,6 +14,7 @@ else{
 
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 <header>
     <div class="container">
         <span class="logo">Saguadim</span>
@@ -33,10 +34,17 @@ else{
                     </a>
                 </div>
             </li>       
-            <li><i class="bi bi-basket3"></i><p>R$ 0,00 <br> 0 Itens</p></li> 
             
+            <li onclick="openNav()"><i class="bi bi-basket3"></i><p>R$ 0,00 <br> 0 Itens</p></li> 
         </ul>
     </div>
 </header>
-
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
 <script src="script.js"></script>
+   

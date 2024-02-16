@@ -1,5 +1,6 @@
 <?php 
-    include("conectadb.php");
+    include("cabecalhocliente.php");
+
 
     $sql = "SELECT * FROM produtos WHERE pro_status = 's'";
     $retorno = mysqli_query($link, $sql);
@@ -14,24 +15,30 @@
     <title>Saguadim</title>
 </head>
 <body>
-    <?php 
-        include("cabecalhocliente.php");
-    ?>
-    <main class="menu-container">
-        <div class="grid-produtos">
-        <?php
-        while ($tbl = mysqli_fetch_array($retorno)) {
-        ?>
-            <div class="produtos">
-
-                <h2><?=$tbl[1]?></h2>
-                <h3>R$<?=$tbl[4]?></h3>
+    <main class="main-menu">
+        <div class="wrapper">
+            <h1 class="title">Salgados</h1>
+            <div class="grid-products">
+                <?php 
+                while ($tbl = mysqli_fetch_array($retorno)) {
+                ?>
+                <a href="" class="product">
+                    <div class="infos">
+                        <div class="info-top">
+                            <h3 span class="name"><?=$tbl[1]?></h3>
+                            <span class="description"><?=$tbl[2]?></span>
+                        </div>
+                        <span class="price">R$ <?=$tbl[4]?></span>
+                    </div>
+                    <div class="img-box">
+                        <!-- <img src="coxinha.jpg"> -->
+                    </div>
+                </a>
+                <?php 
+                }
+                ?>
             </div>
-            <?php 
-        }
-        ?>
         </div>
-        
     </main>
 </body>
 </html>

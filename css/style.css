@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 * {
   font-family: "Montserrat";
@@ -7,6 +8,12 @@
   text-decoration: none;
   list-style: none;
   color: #262626;
+}
+
+.wrapper {
+  min-height: 100%;
+  padding: 0 20px;
+  width: 1420px;
 }
 
 /** ======================== LOGIN ADMIN ==================================== */
@@ -236,12 +243,77 @@
 }
 
 /** =============================== MENU ==================================== */
+.main-menu {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+.main-menu .wrapper {
+  width: 1300px;
+}
+.main-menu .wrapper .title {
+  margin: 35px 0;
+  font-size: 20px;
+}
+.main-menu .wrapper .grid-products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+.main-menu .wrapper .grid-products .product {
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 15px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 180px;
+  overflow: hidden;
+  min-height: 147px;
+}
+.main-menu .wrapper .grid-products .product:hover {
+  border: 1px solid #dbdad9;
+  transition: 0.4s;
+}
+.main-menu .wrapper .grid-products .product .infos {
+  display: grid;
+  grid-template-rows: 1fr 20px;
+}
+.main-menu .wrapper .grid-products .product .infos .info-top .name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.main-menu .wrapper .grid-products .product .infos .info-top .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  font-size: 0.875rem;
+  font-weight: lighter;
+  color: #717171;
+}
+.main-menu .wrapper .grid-products .product .infos .price {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.main-menu .wrapper .grid-products .product .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
 /** ======================== CABECALHO CLIENTE ============================== */
 header {
   background-color: #fff;
+  z-index: 999;
   position: fixed;
   width: 100%;
-  height: 90px;
+  height: 80px;
   display: flex;
   justify-content: center;
   box-shadow: inset 0 -1px 0 #dcdcdc;
@@ -346,4 +418,615 @@ header .container .links .dropdown .dropdown-content a:hover .text, header .cont
 }
 header .container .links .dropdown:hover .dropdown-content {
   display: flex;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 998;
+  top: 80px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+  margin-right: 50px;
+  color: #b30021;
+}
+
+/** ========================================================================= */
+/** ======== CABECALHO ======== */
+nav {
+  background-color: #d1d1d1;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 0.5px 10px #888888;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+
+.nav-container {
+  /* background-color: gold; */
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container .nav-list {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-container .nav-list li {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  padding: 0 15px 0 15px;
+}
+
+.nav-container .nav-list li:hover {
+  border-bottom: 1px solid #262626;
+}
+
+.nav-container .nav-list a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-container .user-info a:hover {
+  color: red;
+}
+
+/** ============ LISTA USUÁRIO =============*/
+.lista-container {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.table {
+  border: 1px solid black;
+  min-height: 600px;
+  border-radius: 10px;
+  width: 1200px;
+}
+
+.table .table-header {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 10px 15px;
+}
+
+.lista-container {
+  background-color: #d1d1d1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista-container main.table {
+  width: 80vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.3333333333);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3333333333);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: none;
+}
+
+.lista-container .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  padding: 1rem 1rem;
+  border: none;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3333333333);
+}
+
+.lista-container .table-body {
+  width: 95%;
+  max-height: calc(89% - 1.6rem);
+  background-color: rgba(255, 255, 255, 0.7333333333);
+  margin: 0.8rem auto;
+  border-radius: 0.6rem;
+  overflow: auto;
+}
+
+.lista-container .table-body tr {
+  position: sticky;
+}
+
+.lista-container .table-body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.lista-container .table-body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2666666667);
+  visibility: hidden;
+}
+
+.lista-container .table-body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.lista-container table {
+  width: 100%;
+  background-color: #868686;
+}
+
+.lista-container table, th, td {
+  text-align: center;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+.lista-container thead th {
+  top: 0;
+  left: 0;
+  background-color: rgba(213, 209, 222, 0.9960784314);
+}
+
+.lista-container tbody tr.even {
+  background-color: rgba(0, 0, 0, 0.0431372549);
+}
+
+.lista-container tbody tr:hover {
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.lista-container .status {
+  padding: 0.4rem 0;
+  border-radius: 2rem;
+}
+
+.lista-container .status.ativo {
+  background-color: #86e49d;
+  color: #006b21;
+}
+
+.lista-container .status.inativo {
+  background-color: #d893a3;
+  color: #b30021;
+}
+
+/** BOTÃO ALTERAR */
+.lista-container .btn-alterar {
+  width: 6rem;
+  padding: 10px 15px;
+  background-color: #b30021;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.lista-container .btn-alterar .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.lista-container .btn-alterar:hover {
+  background-color: #dd0f34;
+}
+
+/** OPÇÕES DE VISUALIZAÇÃO - RADIO BUTTONS */
+.lista-container .form-container {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.lista-container .form-container form {
+  display: flex;
+}
+
+.lista-container .radio {
+  display: none;
+}
+
+.lista-container .radio-label {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #FFF;
+  background: #dd0f34;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.lista-container .radio-label:not(:last-of-type) {
+  border-right: 1px solid #b30021;
+}
+
+.lista-container .radio:checked + .radio-label {
+  background: #b30021;
+}
+
+.lista-container .btn-cadastrar {
+  padding: 10px 15px;
+  background-color: #b30021;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+  color: #fff;
+  font-weight: bold;
+}
+
+.lista-container .btn-cadastrar:hover {
+  background-color: #dd0f34;
+}
+
+/** ========== CADASTRA ======== */
+.cadastra-container {
+  padding: 90px 0;
+  background-color: #d1d1d1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastra-container.cliente {
+  padding-bottom: 0;
+}
+
+.cadastra-container input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+}
+
+.cadastra-container .input-box {
+  border: none;
+  padding: 15px 15px;
+  border: 1px solid #868686;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.cadastra-container #desc {
+  resize: none;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.cadastra-container .btn {
+  border: none;
+  background-color: #b30021;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bolder;
+  width: 100%;
+}
+
+.cadastra-container .btn:hover {
+  background-color: #dd0f34;
+}
+
+.cadastra-form {
+  width: 500px;
+}
+
+/** ============ ALTERA  =============*/
+.cadastra-container .form-container {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  margin: 10px 0;
+}
+
+.cadastra-container .form-container form {
+  display: flex;
+}
+
+.cadastra-container .radio {
+  display: none;
+}
+
+.cadastra-container .radio-label {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #FFF;
+  background: #dd0f34;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.cadastra-container .radio-label:not(:last-of-type) {
+  border-right: 1px solid #b30021;
+}
+
+.cadastra-container .radio:checked + .radio-label {
+  background: #b30021;
+}
+
+/** ============= CLIENTE =============== */
+.cliente-container .wrapper {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+.cliente-container .wrapper .wrapper-perfil {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.perfil-container {
+  background-color: #fff;
+  width: 250px;
+  height: 500px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 10px #868686;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 0 0 0;
+}
+
+.perfil-container .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.perfil-container .user h1 {
+  text-align: center;
+  width: 200px;
+}
+
+.perfil-container .perfil-pic {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+.user-list {
+  width: 100%;
+}
+
+.user-list li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d1d1d1;
+  border-radius: 7px;
+  padding: 0 15px;
+}
+
+.user-list li a:hover {
+  background-color: #eeeeee;
+}
+
+.user-list li button {
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 0 15px;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.user-list li button:hover {
+  background-color: #eeeeee;
+}
+
+.cliente-container .user-pedidos {
+  height: 500px;
+  width: 900px;
+  border-radius: 7px;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+}
+
+.cliente-container .user-info {
+  height: 500px;
+  width: 900px;
+  border-radius: 7px;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+}
+
+.cliente-container .cliente-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.cliente-container .user-info .cliente-input {
+  width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 20px;
+  margin: 15px 0;
+}
+
+.cliente-container input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  -moz-appearance: textfield;
+}
+
+.cliente-container .input-box {
+  border: none;
+  padding: 15px 15px;
+  border: 1px solid #868686;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+}
+
+.cliente-container .cliente-form .input-box.telefone,
+.cliente-container .cliente-form .input-box.cpf,
+.cliente-container .cliente-form .input-box.sala,
+.cliente-container .cliente-form .input-box.curso {
+  width: 320px;
+}
+
+.cliente-container .btn {
+  border: none;
+  background-color: #b30021;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bolder;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.cliente-container .btn:hover {
+  background-color: #dd0f34;
+}
+
+.cliente-container {
+  background-color: #e4e4e4;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+}
+.cliente-container .perfil {
+  height: 500px;
+  width: 900px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+}
+.cliente-container .perfil button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #262626;
+  font-size: 16px;
+}
+.cliente-container .perfil button:hover {
+  transition: 0.5s;
+  color: #b30021;
+}
+.cliente-container .perfil h1 {
+  font-size: 24px;
+  text-align: center;
+}
+.cliente-container .perfil i {
+  font-size: 100px;
+}
+.cliente-container .perfil .user-card {
+  height: 400px;
+  width: 250px;
+  border-radius: 7px;
+  padding: 15px;
+  background-color: #FFF;
+  box-shadow: 2px 2px 10px #868686;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.cliente-container .perfil .pedidos-card {
+  height: 400px;
+  width: 250px;
+  border-radius: 7px;
+  padding: 15px;
+  background-color: #FFF;
+  box-shadow: 2px 2px 10px #868686;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.cliente-container .back {
+  border-radius: 7px 7px 0 0;
+}
+.cliente-container .back .leave-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 50px;
+  padding: 10px 15px 0 15px;
+}
+.cliente-container .back .leave-btn i:hover {
+  color: #b30021;
+  transition: 0.5s;
 }/*# sourceMappingURL=style.css.map */
