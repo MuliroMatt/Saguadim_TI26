@@ -1,5 +1,6 @@
 <?php
-include("conectadb.php");
+include("cabecalhocliente.php");
+
 session_start();
 
 if(isset($_SESSION['idcliente'])){
@@ -46,9 +47,6 @@ if(isset($_SESSION['idcliente'])){
     <title>Saguadim</title>
 </head>
 <body>
-    <?php 
-        include("cabecalhocliente.php");
-    ?>
     <main class="cliente-container">
         <div class="wrapper">
         <?php 

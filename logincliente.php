@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         while ($tbl = mysqli_fetch_array($retorno)) {
             $_SESSION['idcliente'] = $tbl[0];
             $_SESSION['emailcliente'] = $tbl[2];
-
+            $_SESSION['nomecliente'] = $tbl[1];
         }
 
         //* Redireciona o usuário para a página 'cliente.php'
@@ -49,64 +49,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>Saguadim - Login</title>
 </head>
 <body>
-    <main class="main-wrapper">
+    <main class="main-cliente">
         <div class="logo">
             <h1>saguadim</h1>
         </div>
         <div class="authentication-container">
             <div class="authentication-header">
             </div>
-            <div class="form-container cliente">
-                <div class="login-container cliente" id="login">
-                    <h1 class="form-title cliente">Login</h1>
+            <div class="form-container">
+                <div class="login-container" id="login">
+                    <h1 class="form-title">Login</h1>
                     <form action="logincliente.php" method="post" class="login-form">
-                        <p class="input-title">E-mail</p>
                         <div class="input-box">
+                            <p class="input-title">E-mail</p>
                             <input type="email" name="emailcliente" id="emailcliente" placeholder="Insira seu E-mail" required>
                         </div>
-                        <p class="input-title">Senha</p>
                         <div class="input-box">
+                            <p class="input-title">Senha</p>
                             <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
                         </div>
-                        <!-- <button class="btn">Entrar</button> -->
                         <button class="btn" type="submit">Entrar</button>
+                        <p class="account-info">
+                            Não tem conta?<a href="#" id="toggleCadastra"> Cadastre-se</a>
+                        </p>
                     </form>
-                    <p class="account-info">
-                        Não tem conta?<a href="#" id="toggleCadastra"> Cadastre-se</a>
-                    </p>
                 </div>
                 <div class="signup-container" id="cadastra">
                     <h1 class="form-title.cliente">Cadastre-se</h1>
                     <form action="cadastracliente.php" method="post" class="signup-form">
-                        <p class="input-title">Username</p>
                         <div class="input-box">
+                            <p class="input-title">Username</p>
                             <input type="text" name="nome" id="nome" placeholder="Insira seu nome de usuário" required>
                         </div>
-                        <p class="input-title">E-mail</p>
                         <div class="input-box">
+                            <p class="input-title">E-mail</p>
                             <input type="email" name="email" id="email" placeholder="Insira seu E-mail" required>
                         </div>
-                        <p class="input-title">Senha</p>
                         <div class="input-box">
+                            <p class="input-title">Senha</p>
                             <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
                         </div>
-                        
                             <input type="hidden" name="telefone" id="telefone">
                             <input type="hidden" name="sala" id="sala">
                             <input type="hidden" name="curso" id="curso">
                             <input type="hidden" name="saldo" id="saldo">
                             <input type="hidden" name="cpf" id="cpf">
-
                         <button class="btn">Cadastrar</button>
+                        <p class="account-info">
+                            Já tem uma conta?<a href="#" id="toggleLogin"> Login</a>
+                        </p>
                     </form>
-                    <p class="account-info">
-                        Já tem uma conta?<a href="#" id="toggleLogin"> Login</a>
-                    </p>
                 </div>
             </div>
         </div>
     </main>
 </body>
-<script src="script.js"></script>
 </html>
 

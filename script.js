@@ -25,3 +25,4 @@ function togglePedidos(){
     document.getElementById("perfil").style.display = "none";
     document.getElementById("user-info").style.display = "none";
 }
+

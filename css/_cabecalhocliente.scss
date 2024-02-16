@@ -1,0 +1,119 @@
+@import './variaveis';
+
+header{
+    background-color:$white;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0 -1px 0 #dcdcdc;
+    .container{
+        // background-color: cyan;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            // background-color: red;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .links{
+            // background-color: red;
+            display: flex;
+            gap: 4px;
+            font-size: 16px;
+            li{
+                gap: 10px;
+                padding: 5px 12px;
+                border-radius: 25px;
+                // background-color: yellow;
+                p{
+                    font-size: 11px;
+                }
+                i{
+                    color: $red;    
+                }
+                a:hover{
+                    color: $red;
+                    transition: .2s;
+                }
+            }
+            li:nth-child(1){
+                display: flex;
+                align-items: center;
+            }
+            li:nth-child(3){
+                display: flex;
+                align-items: center;
+            }
+            li:nth-child(3):hover{
+                background-color: #eeeeee;
+                transition: .5s;
+                cursor: pointer;
+            }
+            .bi.bi-basket3{
+                font-size: 25px;
+                margin-bottom: 2px;
+            }
+            .bi.bi-person{
+                font-size: 32px;
+            }
+            .dropdown{
+                position: relative;
+                float: right;
+                button{
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
+                }
+                .dropdown-content{
+                    border: 1px solid #f7f7f7;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+                    padding: 30px 40px;
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    background-color: $white;
+                    right: 15;
+                    transform: translateY(5px);
+                    h1{
+                        font-size: 28px;
+                        padding: 10px 0 20px;
+                    }
+                    a{
+                        // background-color: cyan;
+                        display: flex;
+                        align-items: center;
+                        gap: 40px;
+                        height: 60px;
+                        padding: 10px 0;
+                        .icon{
+                            font-size: 32px;
+                            i{
+                                color: #262626;
+                            }
+                        }
+                        .text{
+                            font-size: 24px;
+                            width: 150px;
+                        }
+                        &:hover .text, &:hover .icon i{
+                            color: $red;
+                            transition: .2s;
+                        }
+                    }
+                    
+                }
+            }
+            .dropdown:hover .dropdown-content{
+                display: flex;
+            }
+        }
+    }
+}
+

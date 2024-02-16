@@ -1,0 +1,149 @@
+@import './variaveis';
+
+.main-cliente{
+    background-color: $grey;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    .logo{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        h1{
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+    .authentication-container{
+        background-color: $white;
+        box-shadow: 3px 3px 10px $shadow;
+        display: flex;
+        .authentication-header{
+            background-image: url('../img/saguados.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 550px;
+            width: 350px;
+        }
+        .form-container{
+            //background-color: blue;
+            padding: 30px 20px;
+            height: 550px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .login-container{
+                height: 350px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                //background-color: green;
+                .login-form{
+                    //background-color: red;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .input-box{
+                        //background-color: cyan;
+                        display: flex;
+                        flex-direction: column;
+                        .input-title{
+                            //background-color: green;
+                            color: #868686;
+                            font-size: 12px;
+                        }
+                        input{
+                            background: none;
+                            outline: none;
+                            border: none;
+                            padding: 15px 15px;
+                            border: 1px solid #868686;
+                            border-radius: 5px;
+                            width: 100%;
+                            margin-top: 10px;
+                            margin-bottom: 30px;
+                        }
+                    }
+                    .btn{
+                        border: none;
+                        background-color: $red;
+                        padding: 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        color: $white;
+                        font-weight: bold;
+                        text-align: center;
+                        transition: .5s;
+                        &:hover{
+                            background-color: $lightred;
+                        }
+                    }
+                    .account-info{
+                        margin-top: 15px;
+                        font-size: 14px;
+                        a{
+                            color: $red;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .signup-container{
+                //background-color: green;
+                height: 450px;
+                display: none;
+                flex-direction: column;
+                justify-content: space-between;
+                .signup-form{
+                    //background-color: red;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    .input-box{
+                        display: flex;
+                        flex-direction: column;
+                        .input-title{
+                            color: #868686;
+                            font-size: 12px;
+                        }
+                        input{
+                            background: none;
+                            outline: none;
+                            border: none;
+                            padding: 15px 15px;
+                            border: 1px solid #868686;
+                            border-radius: 5px;
+                            width: 100%;
+                            margin: 10px 0 30px 0;
+                        }
+                    }
+                    .btn{
+                        border: none;
+                        background-color: $red;
+                        padding: 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        color: $white;
+                        font-weight: bolder;
+                        transition: .5s;
+                        &:hover{
+                            background-color: $lightred;
+                        }
+                    }
+                    .account-info{
+                        margin-top: 15px;
+                        font-size: 14px;
+                        a{
+                            color: $red;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
