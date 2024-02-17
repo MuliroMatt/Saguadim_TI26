@@ -15,7 +15,7 @@ else{
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<header>
+<header class="cliente-header">
     <div class="container">
         <span class="logo">Saguadim</span>
         <ul class="links">
@@ -41,10 +41,6 @@ else{
 </header>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
 </div>
 <script src="script.js"></script>
    

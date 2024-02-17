@@ -1,6 +1,6 @@
 @import './variaveis';
 
-header{
+.cliente-header{
     background-color:$white;
     z-index: 999;
     position: fixed;
@@ -141,7 +141,6 @@ header{
         top: 0;
         left: 0;
         font-size: 36px;
-        margin-right: 50px;
         color: $red;
     }
   }
