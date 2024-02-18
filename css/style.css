@@ -272,11 +272,21 @@
   grid-template-columns: 1fr 180px;
   overflow: hidden;
   min-height: 147px;
+  position: relative;
   cursor: pointer;
 }
 .main-menu .wrapper .grid-products .product:hover {
   border: 1px solid #dbdad9;
   transition: 0.4s;
+}
+.main-menu .wrapper .grid-products .product button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 .main-menu .wrapper .grid-products .product .infos {
   display: grid;
@@ -308,6 +318,14 @@
   aspect-ratio: 1/1;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with an opacity of 0 */
+  }
+  to {
+    opacity: 1; /* End with an opacity of 1 */
+  }
+}
 .product-overlay {
   z-index: 1000;
   background-color: rgba(113, 113, 113, 0.9);
@@ -317,6 +335,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation-name: fadeIn; /* Name of the fade-in animation */
+  animation-duration: 0.1s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Keeps the element in its final state after the animation ends */
+  opacity: 0;
 }
 .product-overlay .product-display {
   background-color: #fff;
@@ -386,7 +408,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 50px;
+  justify-content: space-between;
+  width: 200px;
 }
 .product-overlay .product-display .display-bottom form .add-to-cart-btn span {
   color: #fff;
