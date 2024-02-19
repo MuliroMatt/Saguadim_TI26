@@ -6,7 +6,7 @@ function toggleInfo(){
     document.getElementById("pedidos").style.display = "none";
 }
 function togglePerfil(){
-    document.getElementById("perfil").style.display = "flex";
+    document.getElementById("perfil").style.display = "grid";
     document.getElementById("user-info").style.display = "none";
     document.getElementById("pedidos").style.display = "none";
 }

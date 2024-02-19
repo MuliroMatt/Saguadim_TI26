@@ -1,8 +1,6 @@
 <?php
 include("cabecalhocliente.php");
 
-session_start();
-
 if(isset($_SESSION['idcliente'])){
     $id = $_SESSION['idcliente']; 
     
@@ -49,102 +47,75 @@ if(isset($_SESSION['idcliente'])){
 <body>
     <main class="cliente-container">
         <div class="wrapper">
-        <?php 
-        if(isset($id)){
-        ?>
-        <div class="wrapper-perfil">
-            <div class="perfil-container">
-                <div class="user">
-                    <div class="perfil-pic">
-                        <i class="bi bi-person-fill"></i>
+            <div class="wrapper-perfil">
+                <div class="perfil-container">
+                    <div class="user">
+                        <div class="perfil-pic">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h1><?=$nome?></h1>
                     </div>
-                    <h1><?=$nome?></h1>
+                    <div class="user-list">
+                        <ul>
+                            <li><a onclick="toggleInfo()">Meu Perfil</a></li> 
+                            <li><a onclick="togglePedidos()">Meus Pedidos</a></li>
+                            <li><a href="logoutcliente.php">Sair</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="user-list">
-                    <ul>
-                        <li><button onclick="toggleInfo()">Meu Perfil</button></li> 
-                        <li><button onclick="togglePedidos()">Meus Pedidos</button></li>
-                        <li><a href="logoutcliente.php">Sair</a></li>
-                    </ul>
+                <div class="perfil" id="perfil">
+                    <div class="cards">
+                        <h1>Meu Perfil</h1>
+                        <i class="bi bi-person"></i>
+                        <button onclick="toggleInfo()">Ver perfil</button>
+                    </div>
+                    <div class="cards">
+                        <h1>Meus pedidos</h1>
+                        <i class="bi bi-bag"></i>
+                        <button onclick="togglePedidos()">Ver pedidos</button>
+                    </div>
                 </div>
-            </div>
-            <div class="perfil" id="perfil">
-                <div class="user-card">
-                    <h1>Meu Perfil</h1>
-                    <i class="bi bi-person"></i>
-                    <button onclick="toggleInfo()">Ver perfil</button>
-                </div>
-                <div class="pedidos-card">
-                    
-                </div>
-                <div class="pedidos-card">
-                    <h1>Meus pedidos</h1>
-                    <i class="bi bi-bag"></i>
-                    <button onclick="togglePedidos()">Ver pedidos</button>
-                </div>
-            </div>
-            <div class="user-info" id="user-info">
-                <div class="back">
+                <div class="user-info" id="user-info">
                     <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
-                </div>
-                <form action="cliente.php" method="post" class="cliente-form">
                     <h1>Informações do usuário</h1>
-                    <div class="cliente-input">
-                        <input type="hidden" name="id">
-                        <div class="input-box">
-                            <input type="text" name="nome" placeholder="Nome" value="<?=$nome?>" required>
+                    <form action="cliente.php" method="post" class="cliente-form">
+                        <div class="cliente-input">
+                            <input type="hidden" name="id">
+                            <div class="input-box">
+                                <label>Nome</label>
+                                <input type="text" name="nome" placeholder="Nome" value="<?=$nome?>" required>
+                            </div>
+                            <div class="input-box">
+                                <label>E-mail</label>
+                                <input type="email" name="email" placeholder="E-mail" value="<?=$email?>" required>
+                            </div>
+                            <div class="input-box telefone">
+                                <label>Telefone</label>
+                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" value="<?=$telefone?>" required>
+                            </div>
+                            <div class="input-box cpf">
+                                <label>CPF</label>
+                                <input type="text" name="cpf" placeholder="CPF" id="cpf" value="<?=$cpf?>" required>
+                            </div>
+                            <div class="input-box curso">
+                                <label>Curso</label>
+                                <input type="text" name="curso" placeholder="Curso" value="<?=$curso?>" required>
+                            </div>
+                            <div class="input-box sala">
+                                <label>Sala</label>
+                                <input type="text" name="sala" placeholder="Sala" value="<?=$sala?>" required>
+                            </div>
                         </div>
-                        <div class="input-box">
-                            <input type="email" name="email" placeholder="E-mail" value="<?=$email?>" required>
-                        </div>
-                        <div class="input-box telefone">
-                            <input type="text" name="telefone" placeholder="Telefone" id="telefone" value="<?=$telefone?>" required>
-                        </div>
-                        <div class="input-box cpf">
-                            <input type="text" name="cpf" placeholder="CPF" id="cpf" value="<?=$cpf?>" required>
-                        </div>
-                        <div class="input-box curso">
-                            <input type="text" name="curso" placeholder="Curso" value="<?=$curso?>" required>
-                        </div>
-                        <div class="input-box sala">
-                            <input type="text" name="sala" placeholder="Sala" value="<?=$sala?>" required>
-                        </div>
+                        <button type="submit" class="btn">Alterar Informações</button>
+                    </form>
+                </div>
+                <div class="user-pedidos" id="pedidos">
+                    <div class="back">
+                        <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
                     </div>
-                    <button type="submit" class="btn">Alterar Informações</button>
-                </form>
-            </div>
-            <div class="user-pedidos" id="pedidos">
-                <div class="back">
-                    <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
+                    <h1>Pedidos</h1>
                 </div>
-                <h1>Pedidos</h1>
             </div>
-        </div>
-        <?php
-        }
-        else{
-        ?>
-        <div class="login-cliente">
-            <div class="title">
-                <h1>Faça Login</h1>
-                <p>Faça seu login para ter acesso ao seu perfil e suas encomendas</p>
-            </div>
-            <form action="logincliente.php" method="post" class="form-cliente">
-                <p class="input-title">E-mail</p>
-                <div class="input-box">
-                    <input type="email" name="emailcliente" id="emailcliente" placeholder="Insira seu E-mail" required>
-                </div>
-                <p class="input-title">Senha</p>
-                <div class="input-box">
-                    <input type="password" name="senha" id="senha" placeholder="Insira sua senha" required>
-                </div>
-                <!-- <button class="btn">Entrar</button> -->
-                <button class="btn" type="submit">Entrar</button>
-            </form>
-        </div>
-        <?php 
-        }
-        ?>
         </div>
     </main>
 </body>

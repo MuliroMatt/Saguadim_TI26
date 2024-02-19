@@ -591,6 +591,143 @@
   color: #b30021;
 }
 
+/** ===================================CLIENTE ============================== */
+.cliente-container {
+  height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cliente-container .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cliente-container .wrapper .wrapper-perfil {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 30px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user .perfil-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user h1 {
+  text-align: center;
+  font-size: 32px;
+  width: 200px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user-list {
+  display: flex;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user-list ul {
+  width: 100%;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user-list ul li {
+  font-size: 20px;
+  display: flex;
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user-list ul li:hover {
+  background-color: #eeeeee;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil-container .user-list ul li a {
+  padding: 15px 20px;
+  width: 100%;
+  height: 100%;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil .cards {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil .cards .bi {
+  font-size: 100px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil .cards .bi.bi-person {
+  font-size: 120px;
+}
+.cliente-container .wrapper .wrapper-perfil .perfil .cards button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .leave-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  font-size: 35px;
+  cursor: pointer;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .leave-btn i:hover {
+  color: #b30021;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info h1 {
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form {
+  background-color: peru;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .cliente-input {
+  background-color: honeydew;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .cliente-input .input-box {
+  display: flex;
+  flex-direction: column;
+}
+.cliente-container .wrapper .wrapper-perfil .user-pedidos {
+  background-color: honeydew;
+  display: none;
+}
+
 /** ========================================================================= */
 /** ======== CABECALHO ======== */
 nav {
@@ -937,238 +1074,4 @@ nav {
   background: #b30021;
 }
 
-/** ============= CLIENTE =============== */
-.cliente-container .wrapper {
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-}
-.cliente-container .wrapper .wrapper-perfil {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.perfil-container {
-  background-color: #fff;
-  width: 250px;
-  height: 500px;
-  border-radius: 7px;
-  box-shadow: 2px 2px 10px #868686;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 20px 0 0 0;
-}
-
-.perfil-container .user {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.perfil-container .user h1 {
-  text-align: center;
-  width: 200px;
-}
-
-.perfil-container .perfil-pic {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 80px;
-}
-
-.user-list {
-  width: 100%;
-}
-
-.user-list li a {
-  font-size: 14px;
-  text-transform: uppercase;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #d1d1d1;
-  border-radius: 7px;
-  padding: 0 15px;
-}
-
-.user-list li a:hover {
-  background-color: #eeeeee;
-}
-
-.user-list li button {
-  font-size: 14px;
-  text-transform: uppercase;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  border: none;
-  border-bottom: 1px solid #d1d1d1;
-  padding: 0 15px;
-  width: 100%;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.user-list li button:hover {
-  background-color: #eeeeee;
-}
-
-.cliente-container .user-pedidos {
-  height: 500px;
-  width: 900px;
-  border-radius: 7px;
-  background-color: #fff;
-  display: none;
-  flex-direction: column;
-}
-
-.cliente-container .user-info {
-  height: 500px;
-  width: 900px;
-  border-radius: 7px;
-  background-color: #fff;
-  display: none;
-  flex-direction: column;
-}
-
-.cliente-container .cliente-form {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.cliente-container .user-info .cliente-input {
-  width: 650px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  row-gap: 20px;
-  margin: 15px 0;
-}
-
-.cliente-container input {
-  border: none;
-  background: none;
-  outline: none;
-  width: 100%;
-  -moz-appearance: textfield;
-}
-
-.cliente-container .input-box {
-  border: none;
-  padding: 15px 15px;
-  border: 1px solid #868686;
-  border-radius: 5px;
-  width: 100%;
-  height: 50px;
-}
-
-.cliente-container .cliente-form .input-box.telefone,
-.cliente-container .cliente-form .input-box.cpf,
-.cliente-container .cliente-form .input-box.sala,
-.cliente-container .cliente-form .input-box.curso {
-  width: 320px;
-}
-
-.cliente-container .btn {
-  border: none;
-  background-color: #b30021;
-  padding: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bolder;
-  text-align: center;
-  transition: 0.5s;
-}
-
-.cliente-container .btn:hover {
-  background-color: #dd0f34;
-}
-
-.cliente-container {
-  background-color: #e4e4e4;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 90px;
-}
-.cliente-container .perfil {
-  height: 500px;
-  width: 900px;
-  border-radius: 7px;
-  display: flex;
-  justify-content: space-around;
-}
-.cliente-container .perfil button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: #262626;
-  font-size: 16px;
-}
-.cliente-container .perfil button:hover {
-  transition: 0.5s;
-  color: #b30021;
-}
-.cliente-container .perfil h1 {
-  font-size: 24px;
-  text-align: center;
-}
-.cliente-container .perfil i {
-  font-size: 100px;
-}
-.cliente-container .perfil .user-card {
-  height: 400px;
-  width: 250px;
-  border-radius: 7px;
-  padding: 15px;
-  background-color: #FFF;
-  box-shadow: 2px 2px 10px #868686;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.cliente-container .perfil .pedidos-card {
-  height: 400px;
-  width: 250px;
-  border-radius: 7px;
-  padding: 15px;
-  background-color: #FFF;
-  box-shadow: 2px 2px 10px #868686;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.cliente-container .back {
-  border-radius: 7px 7px 0 0;
-}
-.cliente-container .back .leave-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 50px;
-  padding: 10px 15px 0 15px;
-}
-.cliente-container .back .leave-btn i:hover {
-  color: #b30021;
-  transition: 0.5s;
-}/*# sourceMappingURL=style.css.map */
+/** ============= CLIENTE =============== *//*# sourceMappingURL=style.css.map */
