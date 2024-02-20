@@ -17,11 +17,17 @@ function togglePedidos(){
 }
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "450px";
+    var sidenav = document.getElementById("mySidenav");
+    if (sidenav.classList.contains("open")) {
+        sidenav.classList.remove("open");
+    } else {
+        sidenav.classList.add("open");
+    }
   }
   
   function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    var sidenav = document.getElementById("mySidenav");
+    sidenav.classList.remove("open");
   }
 
 function overlayOn(){

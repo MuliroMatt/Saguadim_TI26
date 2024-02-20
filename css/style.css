@@ -576,6 +576,9 @@
   transition: 0.5s;
   padding-top: 60px;
 }
+.sidenav.open {
+  width: 450px;
+}
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -657,7 +660,7 @@
   height: 100%;
 }
 .cliente-container .wrapper .wrapper-perfil .perfil {
-  display: none;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   -moz-column-gap: 30px;
        column-gap: 30px;
@@ -687,7 +690,7 @@
   border: 1px solid #dcdcdc;
   border-radius: 4px;
   padding: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -713,19 +716,73 @@
 }
 .cliente-container .wrapper .wrapper-perfil .user-info .cliente-form {
   background-color: peru;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .cliente-input {
   background-color: honeydew;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 .cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .cliente-input .input-box {
   display: flex;
   flex-direction: column;
 }
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .cliente-input .input-box input {
+  margin-top: 7px;
+  width: 300px;
+  height: 50px;
+  background: none;
+  outline: none;
+  border: none;
+  padding: 15px 15px;
+  border: 1px solid #868686;
+  border-radius: 4px;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .btn-form {
+  border: none;
+  background-color: #b30021;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bolder;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 20;
+}
+.cliente-container .wrapper .wrapper-perfil .user-info .cliente-form .btn-form:hover {
+  background-color: #dd0f34;
+}
 .cliente-container .wrapper .wrapper-perfil .user-pedidos {
-  background-color: honeydew;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 20px;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cliente-container .wrapper .wrapper-perfil .user-pedidos .leave-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  font-size: 35px;
+  cursor: pointer;
+}
+.cliente-container .wrapper .wrapper-perfil .user-pedidos .leave-btn i:hover {
+  color: #b30021;
+}
+.cliente-container .wrapper .wrapper-perfil .user-pedidos h1 {
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
 }
 
 /** ========================================================================= */

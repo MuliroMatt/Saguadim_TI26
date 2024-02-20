@@ -106,13 +106,11 @@ if(isset($_SESSION['idcliente'])){
                                 <input type="text" name="sala" placeholder="Sala" value="<?=$sala?>" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn">Alterar Informações</button>
+                        <button type="submit" class="btn-form">Alterar Informações</button>
                     </form>
                 </div>
                 <div class="user-pedidos" id="pedidos">
-                    <div class="back">
-                        <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
-                    </div>
+                    <button class="leave-btn" onclick="togglePerfil()"><i class="bi bi-x"></i></button>
                     <h1>Pedidos</h1>
                 </div>
             </div>

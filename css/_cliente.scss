@@ -74,7 +74,7 @@
             }
             .perfil{
                 // background-color: tan;
-                display: none;
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 column-gap: 30px;
                 .cards{
@@ -105,7 +105,7 @@
                 border: 1px solid #dcdcdc;
                 border-radius: 4px;
                 padding: 20px;
-                display: flex;
+                display: none;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -130,20 +130,76 @@
                 }
                 .cliente-form{
                     background-color: peru;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
                     .cliente-input{
                         background-color: honeydew;
                         display: grid;
                         grid-template-columns: 1fr 1fr;
+                        gap: 20px;
                         .input-box{
                             display: flex;
                             flex-direction: column;
+                            input{
+                                margin-top: 7px;
+                                width: 300px;
+                                height: 50px;
+                                background: none;
+                                outline: none;
+                                border: none;
+                                padding: 15px 15px;
+                                border: 1px solid #868686;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                    .btn-form{
+                        border: none;
+                        background-color: $red;
+                        padding: 15px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        color: $white;
+                        font-weight: bolder;
+                        transition: .5s;
+                        position: absolute;
+                        bottom: 20;
+                        &:hover{
+                            background-color: $lightred;
                         }
                     }
                 }
             }
             .user-pedidos{
-                background-color: honeydew;
-                display: none;
+                 // background-color: teal;
+                 border: 1px solid #dcdcdc;
+                 border-radius: 4px;
+                 padding: 20px;
+                 display: none;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                 position: relative;
+                 .leave-btn{
+                    position: absolute;
+                    background: none;
+                    border: none;
+                    padding: 20px;
+                    top: 0;
+                    left: 0;
+                    font-size: 35px;
+                    cursor: pointer;
+                    i:hover{
+                        color: $red;
+                    }
+                }
+                h1{
+                    position: absolute;
+                    top: 0;
+                    margin-top: 20px;
+                }
             }
         }
     }

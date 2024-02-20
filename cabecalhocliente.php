@@ -47,7 +47,28 @@ if($nomecliente == ''){
     </div>
 </header>
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <?php 
+        $sql = "SELECT produtos.pro_nome, item_venda.iv_quantidade, item_venda.iv_total
+        FROM produtos
+        JOIN item_venda ON produtos.pro_id = item_venda.fk_pro_id
+        WHERE cli_id = $idcliente";
+        
+        $retorno = mysqli_query($link, $sql);
+
+        while ($tbl = mysqli_fetch_array($retorno)){
+
+    ?>
+    <div>
+        <span><?=$tbl[0]?></span>
+        <span><?=$tbl[1]?></span>
+        <span><?=$tbl[2]?></span>
+    </div>
+    <?php 
+        }
+    ?>
+    
+    
 </div>
 <script src="script.js"></script>
    

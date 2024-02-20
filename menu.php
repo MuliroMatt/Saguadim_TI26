@@ -17,6 +17,8 @@
             echo "<script>let preco = '$preco';</script>";
         }
     }
+
+    
     
 
 ?>
@@ -44,13 +46,15 @@
             </div>
             <hr>
             <div class="display-bottom">
-                <form action="">
+                <form action="adiciona.php" method="post">
+                    <input type="hidden" name="id-produto" value="<?=$id?>">
+                    <input type="hidden">
                     <div class="count-btn">
                         <button type="button" class="decrease-btn" id="decrement" onclick="stepper(this)">-</button>
-                        <input type="number" min="1" max="100" value="1" id="my-input" step="1" readonly>
+                        <input type="number" min="1" max="100" value="1" id="my-input" name="quantidade" step="1" readonly>
                         <button type="button" class="increase-btn" id="increment" onclick="stepper(this)">+</button>
                     </div>
-                    <button class="add-to-cart-btn"> <span class="text">Adicionar</span> <span id="btn-price">R$ <?=$preco?></span></button>
+                    <button id="myBtn" name="btn" class="add-to-cart-btn" value="<?=$preco?>"><span class="text">Adicionar</span> <span id="btn-price">R$ <?=$preco?></span></button>
                 </form>
             </div>
         </div>
@@ -103,6 +107,7 @@
             if (newValue >= min && newValue <= max) {
                 myInput.setAttribute("value", newValue);
                 let result = (preco * newValue).toFixed(2)
+                myBtn.setAttribute("value", result);
                 document.getElementById('btn-price').innerText = 'R$ ' + result
             }
         }
