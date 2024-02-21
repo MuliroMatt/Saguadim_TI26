@@ -16,10 +16,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     echo'<br>';
     echo "idcliente " . $idcliente;
     
-    $sql = "INSERT INTO item_venda (iv_quantidade, iv_total, fk_pro_id)
-            VALUES ('$quantidade', '$total', '$id')";
+    $sql = "INSERT INTO item_venda (iv_quantidade, iv_total, fk_pro_id, fk_cli_id)
+            VALUES ('$quantidade', '$total', '$id', '$idcliente')";
     mysqli_query($link, $sql);
-    // echo "<script>window.location.href='menu.php';</script>";
+    echo "<script>window.location.href='menu.php';</script>";
 
 }
 
