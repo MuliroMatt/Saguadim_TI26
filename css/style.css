@@ -565,7 +565,7 @@
 
 .sidenav {
   height: calc(100% - 80px);
-  width: 450px;
+  width: 0;
   position: fixed;
   z-index: 998;
   top: 80;
@@ -574,10 +574,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
   transition: 0.5s;
-  padding: 20px 45px;
 }
 .sidenav.open {
   width: 450px;
+  transition: 0;
+  padding: 20px 45px;
 }
 .sidenav .closebtn {
   text-decoration: none;

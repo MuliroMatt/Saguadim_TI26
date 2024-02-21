@@ -51,13 +51,12 @@ if($nomecliente == ''){
     <?php 
     $sql = "SELECT pro_nome, iv_quantidade, iv_total
             FROM produtos
-            JOIN item_venda ON pro_id = fk_pro_id
-            WHERE fk_cli_id = $idcliente";
+            JOIN item_venda ON pro_id = fk_pro_id";
     $retorno = mysqli_query($link, $sql);
 
     if(mysqli_num_rows($retorno) > 0) {
         while($tbl = mysqli_fetch_array($retorno)){
-    ?>
+    ?> 
     <h3 class="title">Seu pedido</h3>
     <div class="items">
         <div class="left-items">
